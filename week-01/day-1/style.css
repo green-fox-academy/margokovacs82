@@ -1,0 +1,65 @@
+body {
+    
+    font-family: 'Roboto', courier;
+    background-image: url("topography.png")
+    
+    
+      
+  } 
+  article {
+    padding: 10%;      
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  
+
+.topnav {
+    background-color:#333333;
+    
+    height: 60px;
+    font-size: 20px;
+    padding: 0;
+
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    
+    color:#ff0099;
+    text-align: center;
+    line-height: 30px;
+    padding: 20px;
+    overflow: hidden;
+    display:inline;
+    float: right;
+    text-decoration: underline;
+    
+}
+
+.header {
+    color:#333333;
+    font-size: 25px;
+    padding: 20px 20px 0px 0px;
+    }
+
+
+.subtitle {
+    color:#ff0099;
+    font-size: 20px;
+    padding: 20px 20px 20px 0px;
+}
+
+.inline {
+    text-align: center;
+ 
+}
+.subline {text-align: center;
+
+}
+
+
+img {margin: 10px 320px;}
+
+
