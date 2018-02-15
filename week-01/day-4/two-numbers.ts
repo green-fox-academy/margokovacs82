@@ -8,7 +8,7 @@
 // Print the reminder of 22 divided by 13
 
 console.log(13 + 22); // Prints 35
-console.log(22 -13); // Prints 9
+console.log(22 - 13); // Prints 9
 console.log(22 * 13); // Prints 286 
 console.log(22 / 13); // Prints 1.692307
 console.log(22 % 13); // Prints 9
