@@ -8,7 +8,7 @@ for(let i: number = 0; i <=500; i++)
     
       } 
       
-      else (i % 2 !== 0); {
+      else (i % 2 === 1); {
         console.log(null);
       }
      
