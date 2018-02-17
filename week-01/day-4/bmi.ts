@@ -5,7 +5,7 @@ let heightInM: number = 1.78;
 
 // Print the Body mass index (BMI) based on these values
 
-let bmi: number = Math.round(massInKg /(heightInM*heightInM));
+let bmi: number = (massInKg /(heightInM*heightInM));
 
 console.log("This is your BMI: " + bmi)
 
