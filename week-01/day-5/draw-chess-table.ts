@@ -20,3 +20,17 @@ let printOut: string = '';
     }    
     console.log(printOut);
 }
+
+
+
+// Create a program that draws a chess table like this
+//
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+//
