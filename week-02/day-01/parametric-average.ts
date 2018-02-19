@@ -15,5 +15,5 @@
 let a:number = 10;
 let b:number = 7;
 
-console.log(a+b);
-console.log((a+b)/2);
+console.log("Sum: " + a+b);
+console.log("Average: " + (a+b)/2);
