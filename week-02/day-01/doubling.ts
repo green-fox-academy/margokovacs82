@@ -3,9 +3,9 @@
 // -  Log the result of `doubling(baseNum)` to the console
 
 'use strict';
+let baseNum: number = 123;
 
-function doubling(a:number): number {
-    return a * 2;   
+function doubling (a: number){
+    return (a * 2);
 }
-let baseNum: number = doubling(123);
-console.log(baseNum);
+console.log (doubling (baseNum));
