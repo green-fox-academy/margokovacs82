@@ -4,8 +4,8 @@
 
 'use strict'
 
-function printer(firstArgument: string, ...restOfArgument: string[]){
+function printer(firstArgument: any, ...restOfArgument: any[]){
     let separate: string = " ";
     console.log(firstArgument, restOfArgument.join(separate));
     };
-printer("hello", "hi", "dead", "dog");
+printer("hello", "hi", 1, "dog");
