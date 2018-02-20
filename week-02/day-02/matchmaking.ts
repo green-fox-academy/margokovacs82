@@ -12,7 +12,7 @@ function makingMatches (girls: string[], boys: string[]) {
   } else {
     length = girls.length;
   }
-  for (var i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     everybody = everybody.concat([girls[i], boys[i]]);
   }
   return everybody;
