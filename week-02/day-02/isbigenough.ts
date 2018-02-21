@@ -17,3 +17,10 @@ console.log(isBigEnough(listOfNumbers));
   //return (elements === 4); 
 //}
 //console.log(listOfNumbers.every(isEveryUnder));
+
+//Áron:
+//function checkNums (arr: any): boolean {
+ // return (arr.includes(4) && arr.includes(8) && arr.includes(12) && arr.includes(16));
+//}
+//console.log(checkNums(listOfNumbers));
+//export = checkNums;
