@@ -8,13 +8,13 @@ const ctx = canvas.getContext('2d');
 // Avoid code duplication.
 
 
-let sSize = 10;
-let sPlace = 10;
+let sSize = 5;
+let sPlace = 5;
 
-for (let i:number = 1; i <= 4; i++){
-  sSize += sSize;
-  sPlace +=sPlace;
+for (let i:number = 1; i <= 6; i++){
+  sSize = sSize + 5;
+  sPlace = ((sSize + sPlace) -5);
 
-ctx.fillStyle = 'pink';
-ctx.fillRect(sSize, sSize, sPlace, sPlace);}
+ctx.fillStyle = 'purple';
+ctx.fillRect(sPlace, sPlace, sSize, sSize);}
 
