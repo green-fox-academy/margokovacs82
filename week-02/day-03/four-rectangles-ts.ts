@@ -9,12 +9,16 @@ const ctx = canvas.getContext('2d');
 
 let sqSize = 20;
 let sqPos = 0;
+let colors: string [] = ['red', 'purple', 'blue', 'black'];
 
 for (let i:number = 1; i <= 4; i++){
     sqPos += sqSize + 10;
     sqSize += 20;
+    ctx.fillStyle = colors[i-1];
     ctx.fillRect(sqPos, sqPos, sqSize, sqSize);
-    ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-
+    
 }
+
+//ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+
            
