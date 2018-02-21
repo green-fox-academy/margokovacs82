@@ -16,5 +16,6 @@ for (let i:number = 1; i <= 6; i++){
   sPlace = ((sSize + sPlace) -5);
 
 ctx.fillStyle = 'purple';
-ctx.fillRect(sPlace, sPlace, sSize, sSize);}
+ctx.fillRect(sPlace, sPlace, sSize, sSize);
+ctx.strokeRect(sPlace, sPlace, sSize, sSize);}
 
