@@ -20,16 +20,16 @@ let amountOfStars: number = 55;
 
 function stars (positx: number, posity: number) {
     ctx.fillRect(positx, posity, 10, 10);
-    //ctx.fillStyle = 'rgba(255, 255, 255, 1/(i)';
-    ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-    //ctx.fillStyle = "rgb("+ Math.floor(Math.random() * 255) + ","+ Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";  
-    //console.log(positx, posity);
 } 
 
 for (let i = 0; i < amountOfStars; i++) {
     positxx[i] = (Math.random() * canvas.width), (Math.random() * canvas.height);
     posityy[i] = (Math.random() * canvas.width), (Math.random() * canvas.height);
+    ctx.fillStyle = "rgba("+ (i * 255) + "," + (i * 255) + "," + (i * 255)+ "," + (i * 0.02) + ")";  
     stars(positxx[i], posityy[i]);  
 }
 
-
+// színkeveréses módszerek:
+//ctx.fillStyle = 'rgba(255, 255, 255, 1/(i)';
+//ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+//ctx.fillStyle = "rgb("+ Math.floor(Math.random() * 255) + ","+ Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";  
