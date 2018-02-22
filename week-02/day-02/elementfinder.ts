@@ -4,13 +4,17 @@
 // if it contains return "Hoorray" otherwise return "Noooooo"
 const numbers: number[] = [1, 2, 3, 4, 5, 6, 8];
 
-numbers.forEach(function(item){
-    if (numbers[item] === 7){
-        numbers[] = containsSeven[];
-    } 
- 
-console.log(containsSeven);
+function containsSeven(valami: number[]) {
+ if(valami.indexOf(7) === -1) {
+     return 'noooooooooooooooo';
+ }
+ else {
+     return 'yeeeeeeeeeees';
+ }
 }
-//export = containsSeven;
+
+
+console.log(containsSeven(numbers));
 // The output should be: "Noooooo"
 // Do this again with a different solution using different list functions!
+export = containsSeven;
