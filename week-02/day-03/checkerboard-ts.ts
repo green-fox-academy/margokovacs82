@@ -13,9 +13,9 @@ function dark(x: number, y: number, size: number) {
     ctx.fillRect(x, y, tileSize, tileSize);
           }
 
-for (let i:number = 1; i <= 400/tileSize; i++){
+for (let i:number = 0; i <= 400/tileSize; i++){
 
-    for (let j:number = 1; j<= 400/tileSize; j++){
+    for (let j:number = 0; j<= 400/tileSize; j++){
     if (i%2 === 0 && j%2 === 1){
         dark(i * tileSize, j * tileSize, tileSize);
       } 

@@ -13,12 +13,11 @@ const ctx = canvas.getContext('2d');
 let squarSize: number = 200;
 
 function squSize (squarSize: number){
-    ctx.fillRect(300 -(squarSize/2), 200- (squarSize/2), squarSize, squarSize);
-    ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);    
-    }
-    for (let i:number = 1; i <= 3; i++){
-        squSize(squarSize);
-        squarSize = squarSize - 50;   
-    
+  ctx.fillRect(300 -(squarSize/2), 200- (squarSize/2), squarSize, squarSize);
+  ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);    
+}
+for (let i:number = 1; i <= 3; i++){
+  squSize(squarSize);
+  squarSize = squarSize - 50;    
 }
 
