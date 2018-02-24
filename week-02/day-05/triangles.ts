@@ -3,20 +3,17 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-let linesOfTriangles: number = 30;
-let heightOfTriangles: number = 20;
+let linesAndHeightsOfTriangles: number = 30;
 
 let x: number = 0;
 let y: number = 600;
 
 function triangles(x: number, y: number){
-    for (let i:number = 0; i<= linesOfTriangles; i++){
-       
+    for (let i:number = 1; i<= linesAndHeightsOfTriangles; i++){
         y -= 20; 
         x = i * 10;
-
-        for (let j:number = 0; j <= heightOfTriangles; j++){
-
+      
+        for (let j:number = 1; j <= linesAndHeightsOfTriangles - i; j++){
         ctx.beginPath();
         ctx.moveTo(x, y); 
         ctx.lineTo(x + 20, y); 
@@ -24,11 +21,8 @@ function triangles(x: number, y: number){
         ctx.lineTo(x, y);  
         ctx.stroke();
 
-        x += 20;
-        heightOfTriangles -= 0.24;
-    
-        
-}
-}
+        x += 20;         
+    }
+    }
 }
 triangles(x, y);
