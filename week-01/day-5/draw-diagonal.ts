@@ -1,21 +1,17 @@
 'use strict';
 
-let lineCount: number = 8;
+let lineCount: number = 9;
 let percent: string = "%";
 let Space: string = " ";
 
 for(let i: number = 1; i <=lineCount; i++){
 let printOut: string = '';
-    
     for(let j: number = 1; j <=(lineCount-1); j++){
         if (i === 1 || i === lineCount){
            printOut += percent;
-        }    
-            
-            else if ((j === i)||(j === 1)||(j===lineCount-1)){
+            } else if ((j === i)||(j === 1)||(j===lineCount-1)){
                 printOut += percent;
-            }
-                else {printOut += Space;
+            } else {printOut += Space;
             }        
     }    
     console.log(printOut);
