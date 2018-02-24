@@ -20,6 +20,10 @@ function triangles(x: number, y: number){
         ctx.lineTo(x + 10, y -20); 
         ctx.lineTo(x, y);  
         ctx.stroke();
+        let grdmg = ctx.createRadialGradient(390, 140, 100, 370, 140, 0);
+        grdmg.addColorStop(0, 'hsla(300, 40%, 70%, 0.7)');
+        grdmg.addColorStop(1, 'hsla(60, 50%, 50%, 0.5)');
+        ctx.strokeStyle = grdmg;
 
         x += 20;         
     }
