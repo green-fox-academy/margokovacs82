@@ -23,7 +23,6 @@ function moveLine2(x, y, z, v){
 }
 moveLine2(x, y, z, v);
 
-
 let xx: number = 0;
 let yy: number = 0;
 let fWidth: number = 0;
