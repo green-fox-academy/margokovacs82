@@ -67,8 +67,7 @@ function moveLine4(xCoor, yCoor, x, y){
         ctx.lineTo(xCoor, yy);
         ctx.moveTo(xx, yCoor);
         ctx.lineTo(xCoor, zz);
-        ctx.stroke();
-       
+        ctx.stroke(); 
     }
 }
 moveLine4(xCoor, yCoor, x, y);
@@ -91,12 +90,10 @@ function moveLine5(xCor, yCor, xxx, yyy){
         ctx.lineTo(xCor, yyy);
         ctx.moveTo(xxx, yCor);
         ctx.lineTo(xCor, zzz);
-        ctx.stroke();
-       
+        ctx.stroke(); 
     }
 }
 moveLine5(xCor, yCor, xxx, yyy);
-
 
 let s: number = 0;
 let d: number = 0;
@@ -121,11 +118,9 @@ function moveLine6(s, d, g, h, k, l){
         ctx.moveTo(s, d);
         ctx.lineTo(l, k);
         ctx.stroke();
-       
     }
 }
 moveLine6(s, d, g, h, k, l);
-
 
 let ss: number = 600;
 let dd: number = 600;
@@ -149,8 +144,7 @@ function moveLine7(ss, dd, gg, hh, kk, ll){
         ctx.lineTo(gg, hh);
         ctx.moveTo(ss, dd);
         ctx.lineTo(kk, ll);
-        ctx.stroke();
-       
+        ctx.stroke();   
     }
 }
 moveLine7(ss, dd, gg, hh, kk, ll);
