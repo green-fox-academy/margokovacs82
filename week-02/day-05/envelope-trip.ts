@@ -97,3 +97,60 @@ function moveLine5(xCor, yCor, xxx, yyy){
 }
 moveLine5(xCor, yCor, xxx, yyy);
 
+
+let s: number = 0;
+let d: number = 0;
+let g: number = 300;
+let h: number = 300;
+let k: number = 300;
+let l: number = 300;
+
+function moveLine6(s, d, g, h, k, l){
+    for (let i:number = 0; i <= 29; i++){
+        s += 10;
+        d += 10;
+        g -= 10;
+        h += 10;
+        k -= 10;
+        l += 10;
+    
+        ctx.strokeStyle = "#f27b7b";
+        ctx.beginPath();
+        ctx.moveTo(s, d);
+        ctx.lineTo(g, h);
+        ctx.moveTo(s, d);
+        ctx.lineTo(l, k);
+        ctx.stroke();
+       
+    }
+}
+moveLine6(s, d, g, h, k, l);
+
+
+let ss: number = 600;
+let dd: number = 600;
+let gg: number = 300;
+let hh: number = 300;
+let kk: number = 300;
+let ll: number = 300;
+
+function moveLine7(ss, dd, gg, hh, kk, ll){
+    for (let i:number = 0; i <= 29; i++){
+        ss -= 10;
+        dd -= 10;
+        gg += 10;
+        hh -= 10;
+        kk -= 10;
+        ll += 10;
+    
+        ctx.strokeStyle = "#f9eb6d";
+        ctx.beginPath();
+        ctx.moveTo(ss, dd);
+        ctx.lineTo(gg, hh);
+        ctx.moveTo(ss, dd);
+        ctx.lineTo(kk, ll);
+        ctx.stroke();
+       
+    }
+}
+moveLine7(ss, dd, gg, hh, kk, ll);
