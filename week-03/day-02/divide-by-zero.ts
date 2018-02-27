@@ -8,10 +8,10 @@
 let num: number = 0;
 
 function divideTen (x: number): any {
-   if (x === 0) {
-    return "fail";
+  if (x === 0) {
+  return "fail";
 } else {
-    return 10 / x;
-}
+  return 10 / x;
+  }
 }
 console.log(divideTen(num));
