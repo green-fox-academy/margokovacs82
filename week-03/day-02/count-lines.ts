@@ -8,7 +8,7 @@ let fs = require('fs');
 try {
 	function fileName (name: string): any {
 	  let fileN = fs.readFileSync(name, 'utf-8');
-  	let myArray: string [] = fileN.split ('\n')
+  	let myArray: string [] = fileN.split('\n')
 	  console.log(myArray.length);
 	}
   fileName('./print-each-line.ts');
