@@ -8,13 +8,14 @@
 'use strict';
 
 class Animals {
-  hunger: number;
-  thirst: number;
+  hunger: number = 50;
+  thirst: number = 50;
+ 
   constructor() {
     this.hunger = 50;
     this.thirst = 50;
   }
-  play() {
+  kill() {
     this.hunger++;
     this.thirst++;
   }
@@ -25,8 +26,8 @@ class Animals {
     this.thirst--;
   }
 }
-let cat = new Animals();
-while (cat.hunger !== 100) {
-cat.play();
+let satan = new Animals();
+while (satan.hunger !== 100) {
+satan.kill();
 }
-console.log(cat.hunger);
+console.log(satan.hunger);
