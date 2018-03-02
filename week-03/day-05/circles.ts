@@ -12,6 +12,7 @@ function drawCircle (x: number, y: number, dia: number, rep: number) {
   ctx.arc(x, y, dia, 0, Math.PI * 2);
   ctx.stroke();
   ctx.strokeStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+  
   if (rep >= 1) {
     setTimeout(function(){ 
     drawCircle(x + dia * Math.sqrt(3)/4, y + dia/4, dia/2, rep - 1);

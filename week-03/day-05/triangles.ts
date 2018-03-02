@@ -25,14 +25,15 @@ function drawTriangle(x: number, y: number, width: number, height: number, rep: 
   ctx.stroke();
   ctx.strokeStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
      
-      if (rep >= 1) {
-        setTimeout(function(){ 
-          drawTriangle(x + 0, y + 0, widthHalf, heithHalf, rep -1);
-          drawTriangle(x + widthHalf, y + 0, widthHalf, heithHalf, rep -1);
-          drawTriangle(x + widthHalf/2, y + heithHalf, widthHalf, heithHalf, rep -1);
-        }, 1000)
-      }
-    } 
+  if (rep >= 1) {
+    setTimeout(function(){ 
+    drawTriangle(x + 0, y + 0, widthHalf, heithHalf, rep -1);
+    drawTriangle(x + widthHalf, y + 0, widthHalf, heithHalf, rep -1);
+    drawTriangle(x + widthHalf/2, y + heithHalf, widthHalf, heithHalf, rep -1);
+    }, 1000)
+  }
+} 
+
 drawTriangle(xCoord, yCoord, xWidth, yHeight, repetition);
     
     
