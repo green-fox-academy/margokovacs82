@@ -12,7 +12,7 @@ let lineWidth: number = 20;
 function drawSquare(x: number, y: number, width: number, height: number, lineW: number, rep: number) {
   let widthQ: number = width / 4;
   let heightQ: number = height / 4;
-  let repetition: number = 7;
+  let repetition: number = repeat;
   
 
   ctx.beginPath();
