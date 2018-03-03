@@ -15,7 +15,7 @@ class Animals {
     this.hunger = 50;
     this.thirst = 50;
   }
-  kill() {
+  sofwareDevelopment() {
     this.hunger++;
     this.thirst++;
   }
@@ -26,8 +26,8 @@ class Animals {
     this.thirst--;
   }
 }
-let satan = new Animals();
-while (satan.hunger !== 100) {
-satan.kill();
+let margo = new Animals();
+while (margo.hunger !== 100) {
+  margo.sofwareDevelopment();
 }
-console.log(satan.hunger);
+console.log(margo.hunger);
