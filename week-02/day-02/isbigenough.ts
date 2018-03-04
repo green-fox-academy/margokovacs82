@@ -1,4 +1,22 @@
 'use strict';
+// Check if array contains all of the following elements: 4,8,12,16
+// Create a function that accepts 'listOfNumbers' as an input
+// it should return "true" if it contains all, otherwise "false"
+let listOfNumbers: number[] = [2, 4, 6, 8, 10, 12, 14, 16];
+
+function checkNums (list:number[]) {
+    if (list.indexOf(4 && 8 && 12 && 16) !== -1) {
+      return true
+    } else {
+      return false
+    }
+}
+console.log(checkNums(listOfNumbers));
+export = checkNums;
+
+
+
+/*
  let listOfNumbers: number[] = [2, 4, 6, 8, 10, 12, 14, 16];
  
  function isBigEnough(list: number[]): boolean{
@@ -17,10 +35,4 @@ console.log(isBigEnough(listOfNumbers));
   //return (elements === 4); 
 //}
 //console.log(listOfNumbers.every(isEveryUnder));
-
-//Áron:
-//function checkNums (arr: any): boolean {
- // return (arr.includes(4) && arr.includes(8) && arr.includes(12) && arr.includes(16));
-//}
-//console.log(checkNums(listOfNumbers));
-//export = checkNums;
+*/
