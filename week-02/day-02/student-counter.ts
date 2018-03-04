@@ -8,19 +8,37 @@ let students: any[] = [
   {name: 'Olaf', age: 12, candies: 7},
   {name: 'Gerzson', age: 10, candies: 1},
 ];
+
 let sum: number = 0;
-students.forEach(function(item) {
-    sum += item.candies;
-}); 
+for (let i:number = 0; i < students.length; i++) {
+    sum += students[i].candies;
+}
 console.log(sum);
 
+//let sum: number = 0;
+//students.forEach(function(item) {
+  //  sum += item.candies;
+//}); 
+//console.log(sum);
+
 let sum2: number = 0;
-students.forEach(function(item) {
-    if(item.candies < 5) {
-        sum2 += item.age;
+for (let i:number = 0; i < students.length; i++) {
+    sum += students[i].candies;
+    if(students[i].candies < 5) {
+        sum2 += students[i].age;
     } 
-}); 
+} 
 console.log(sum2);
+
+
+//console.log(sum);
+//let sum2: number = 0;
+//students.forEach(function(item) {
+  //  if(item.candies < 5) {
+    //    sum2 += item.age;
+    //} 
+//}); 
+//console.log(sum2);
 
 
 // create a function that takes a list of students and logs: 
