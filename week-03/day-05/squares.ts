@@ -14,7 +14,6 @@ function drawSquare(x: number, y: number, width: number, height: number, lineW: 
   let heightQ: number = height / 4;
   let repetition: number = repeat;
   
-
   ctx.beginPath();
   ctx.moveTo(x + widthQ, y + heightQ);  //0
   ctx.lineTo(x + widthQ * 3, y + heightQ); //1

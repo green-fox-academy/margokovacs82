@@ -25,7 +25,6 @@ function drawCarpet(x: number, y: number, width: number, height: number, rep: nu
     drawCarpet(x + width * 2, y - height/100, width/3, height/3, rep -1); // jobb felső
     drawCarpet(x + width * 2, y + height, width/3, height/3, rep -1); //jobb közép
     drawCarpet(x + width * 2, y + height * 2, width/3, height/3, rep -1); // jobb alsó
-    
     }, 700)
   }  
 }
