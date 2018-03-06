@@ -1,5 +1,5 @@
 'use strict';
-class Person {
+export class Person {
   name: string;
   age: number;
   gender: string;
@@ -19,7 +19,7 @@ class Person {
   }
 }
 
-class Student{
+export class Student extends Person {
 
   name: string;
   age: number;
@@ -27,10 +27,8 @@ class Student{
   previousOrganization: string;
   skippedDays: number;
 
-  constructor(name: string = 'Jane Doe', age: number = 30, gender: string = 'female', previousOrganization: string = 'The School of Life') {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+  constructor(name?: string, age?: number, gender?: string, previousOrganization?: string) {
+    super (name, age, gender)
     this.previousOrganization = previousOrganization;
     this.skippedDays = 0;
   }
@@ -45,18 +43,17 @@ class Student{
   }
 }
 
-class Mentor {
+export class Mentor extends Person {
   name: string;
   age: number;
   gender: string;
   level: string;
  
-  constructor(name: string = 'Jane Doe', age: number = 30, gender: string = 'female', level: string = 'junior') {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.level = level;
+  constructor(name?: string, age?: number, gender?: string, level?: string) {
+  super(name, age, gender);
+  this.level = level;
   }
+
 introduce() {
   return `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} ${this.level} mentor.`;
 }
@@ -65,17 +62,15 @@ getGoal() {
 }
 }
 
-class Sponsor {
+export class Sponsor extends Person{
   name: string;
   age: number;
   gender: string;
   company: string;
   hiredStudents: number;
 
-  constructor(name: string = 'Jane Doe', age: number = 30, gender: string = 'female', company: string = 'Google') {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+  constructor(name?: string, age?: number, gender?: string, company?: string) {
+    super(name, age, gender);
     this.company = company;
   }
   
@@ -88,29 +83,6 @@ class Sponsor {
   getGoal() {
     return "Hire brilliant junior software developers.";
   }
-}
-
-class Cohort{
-
-name: string;
-students: Student [];
-mentors: Mentor [];
-
-constructor(name, age, gender, company) {
-  this.name = 'Macrotice Ace';
-  
-}
-
-addStudent(Student){
-  Student += this.students;
-} 
-addMentor(Mentor) { 
-Mentor += this.mentors;
-}
-
-info() { 
-return `The ${this.name}, has ${this.students.length} students and ${this.mentors.length} mentors`;
-}
 }
 
 let people = [];
