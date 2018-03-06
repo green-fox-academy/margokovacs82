@@ -21,9 +21,6 @@ export class Person {
 
 export class Student extends Person {
 
-  name: string;
-  age: number;
-  gender: string;
   previousOrganization: string;
   skippedDays: number;
 
@@ -44,9 +41,7 @@ export class Student extends Person {
 }
 
 export class Mentor extends Person {
-  name: string;
-  age: number;
-  gender: string;
+  
   level: string;
  
   constructor(name?: string, age?: number, gender?: string, level?: string) {
@@ -63,9 +58,7 @@ getGoal() {
 }
 
 export class Sponsor extends Person{
-  name: string;
-  age: number;
-  gender: string;
+  
   company: string;
   hiredStudents: number;
 
