@@ -3,7 +3,7 @@
 
 'use strict';
 
-export function anagram (a: string, b: string): boolean {
+/*export function anagram (a: string, b: string): boolean {
   let y = a.split("").sort();
   let z = b.split("").sort();
     if(y.length==z.length) {
@@ -16,6 +16,16 @@ export function anagram (a: string, b: string): boolean {
     } else { 
         return false;
       }
-}
+} */
 
 //console.log(anagram('mary', 'arms'));
+
+
+export let anagram = (x: string, y: string) => {
+if (x.split('').sort().join('') === y.split('').sort().join('')) {
+  return true;
+} else {
+  return false;
+  }
+}
+console.log(anagram('mary', 'arms')); 
