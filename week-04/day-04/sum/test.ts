@@ -22,9 +22,8 @@ import { Summa } from './sum'
 test('add numbers', t => {
   const operations = new Summa();
 
-  let testArray: number[] = [1,2,3,4,5];
-  t.equal(operations.addNumbers(testArray), 15);
-  t.equal(operations.addNumbers(testArray), 'apple');
+  t.equal(operations.addNumbers(["2"]), 15);
+  t.equal(operations.addNumbers([1,2,3,4,5]), 'apple');
 
   let testArray2: number[] = [1,2,3];
   t.equal(operations.addNumbers(testArray2), 15);
