@@ -26,3 +26,8 @@ function appendAFun(append: string []) {
   return append
 }
 console.log(appendAFun(newNimals));
+
+// -  Add all elements an `"a"` at the end
+
+nimals = nimals.map(nimals => nimals + "a ");
+console.log(nimals);
