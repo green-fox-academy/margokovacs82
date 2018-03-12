@@ -3,7 +3,7 @@
 //     -  Greeting is printing e.g. `Greetings, dear Greenfox`
 //     -  Prepare for the special case when no parameters are given
 // -  Greet `name`
-
+'use strict';
 let name1: string = 'Greenfox';
 
 function greet(n1?: string) {
