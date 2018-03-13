@@ -13,3 +13,4 @@ console.log(coolArray.filter(uniqueArr));
 var myArray = [1, 11, 34, 11, 52, 61, 1, 34];
 var unique = myArray.filter((v, i, a) => a.indexOf(v) === i); 
 console.log(unique);
+
