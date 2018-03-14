@@ -10,20 +10,9 @@
 // Start the program with "node calculator.js + 5 6"
 // If number of arguments are not correct, print some nice errors
 // Else print the result
-// Say goodbye
+// Say goodbye 
 
-const args = process.argv.splice(2); // Just a helper for you to get started
 
-function calculate(a:number, b:number) {
-for (let j = 0; j < process.argv.length; j++) {  
-  console.log(j + ' -> ' + (process.argv[j]));
-}
-if (process.argv[2] === ('+')) {
-  console.log(5 + 6);
-  }
-}
-
-/*
 function calculate(a:number, b:number, c:string) {
   if (c === '+') {
     return (a + b);
@@ -39,4 +28,4 @@ function calculate(a:number, b:number, c:string) {
   }
 }
 
-console.log(calculate(2,3,'+')); */
+console.log(calculate(parseInt(process.argv[2]), parseInt(process.argv[3]), process.argv[4])); 
