@@ -43,12 +43,13 @@ let file2: string = './copy.txt';
 function copy(f1: string, f2: string) {
   let f3 = fs.readFileSync(f1, 'utf-8');
   try {
-  return f2 = fs.writeFileSync(f2, f3, 'utf-8');
+  f2 = fs.writeFileSync(f2, f3, 'utf-8');
+  return true;
   } catch(error) {
-    return "Sorry, the file doesn't exist."
+    return false;
   }
 }
-copy(file1, file2);
+(copy(file1, file2));
 
 // Write a program that opens a file called 'my-file.txt', then prints
 // each of lines form the file.
