@@ -16,7 +16,7 @@ class Fleet {
     printList() {
       for (let i: number = 0; i <this.printList.length; i++) {
         let mark = ' ';
-        if (this.things[i].complete()) {
+        if (this.things[i].completed) {
           mark = 'X';
         }
         console.log((i+1)+'. [' + mark + ']' + this.things[i])

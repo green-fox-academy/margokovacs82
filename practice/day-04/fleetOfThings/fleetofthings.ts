@@ -15,9 +15,13 @@ fleet.add(thing2);
 fleet.add(thing3);
 fleet.add(thing4);
 
-thing1.complete();
-thing3.complete();
+thing1.markAsCompleted();
+thing3.markAsCompleted();
 
+fleet.printList();
+
+fleet.add(new Thing('Bread'));
+thing2.markAsCompleted();
 fleet.printList();
 
 console.log(fleet);

@@ -2,17 +2,24 @@
 'use strict';
 class Thing {
   private name: string;
-  private completed: boolean;
+  completed: boolean;
 
   constructor(name: string){
       this.name = name;
+      this.completed = false;
   }
-  public complete() {
-      this.completed = true;
+      get getname(): string {
+        return this.name;
+      }
+      
+      set setname(name: string) {
+        this.name = name;
+      }
+     
+      markAsCompleted() {
+        this.completed = true;
+      }
   }
-  getName() {
-    return this.name;
-  }
-}
+
 
 export {Thing};
