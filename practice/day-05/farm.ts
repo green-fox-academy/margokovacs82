@@ -8,23 +8,21 @@
 // slaughter() -> removes the least hungry animal
 
 export class Farm {
-  slots: number;
+  slots: 10;
   freeplace: number;
   animals: Animal [];
 
   constructor() {
-    this.slots = 10;
-    this.freeplace = this.freeplace;
     this.animals = [];
+  }
+  addAnimal(anim: Animal) {
+    this.animals.push(anim);
   }
   returnSlots() {
     return this.slots;
   }
   returnFree() {
     console.log(`You have ${this.slots - this.animals.length} places left.`);
-  }
-  addAnimal(anim: Animal) {
-    this.animals.push(anim);
   }
   breed() {
     if (this.animals.length > 1 && this.slots > this.animals.length) {
@@ -46,10 +44,10 @@ export class Farm {
 export class Animal extends Farm {
   name: string;
   gender: string;
-  thirst: number;
-  hunger: number;
+  thirst: 50;
+  hunger: 50;
 
-  constructor(name?: string, gender?: string, force?: number) {
+  constructor(name?: string, gender?: string) {
     super()
     this.name = name;
     this.gender = gender;
@@ -81,20 +79,20 @@ let mici = new Animal('Mici', 'female');
 let lali = new Animal('Lali', 'male');
 let juci = new Animal('Juci', 'female');
 let farm = new Farm();
-farm.addAnimal(mici);
+farm.addAnimal(new Animal('Nemo', 'male'));
 farm.addAnimal(lali);
 farm.addAnimal(juci);
+console.log(farm);
 
 /*farm.breed();
 farm.breed();
 farm.breed();
-console.log(farm.returnFree());/*/
-
+console.log(farm.returnFree());
 lali.play(40);
 mici.play(60);
 farm.slaughter();
 console.log(farm);
 farm.slaughter();
-console.log(farm);
+console.log(farm);*/
 
 
