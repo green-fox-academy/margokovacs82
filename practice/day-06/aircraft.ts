@@ -12,7 +12,6 @@ export class Carrier {
     this.totaldamage = 0;
   }
 
-
   addPlane(pl: Aircraft) {
     this.planes.push(pl);
   }
@@ -22,7 +21,7 @@ export class Carrier {
     this.planes.push(new F35);
   }
 
-  fill (ammo: number) {
+  fill(ammo: number) {
     if (ammo <= 0) {   
       console.log('Sorry, no fuel!')
   } else if (ammo < this.ammostore) {
@@ -43,15 +42,16 @@ export class Carrier {
       } 
     }
   }
+
   fight(anothership: Carrier) {
-    if (this.health <= 0) {
-      console.log(`It is dead, Jim!`) 
-     } else {
         for (let i: number = 0; i < this.planes.length; i++) {
           this.totaldamage += this.planes[i].fight();
           this.ammostore -= this.ammostore;
-          this.health -= this.totaldamage;
-      } return this.totaldamage;
+          anothership.health -= this.totaldamage;
+        } if (anothership.health <= 0) {
+            console.log (`It is dead, Jim!`);
+      } else {
+        return this.totaldamage;
     }
   } 
 
@@ -82,10 +82,14 @@ export class Aircraft extends Carrier {
   }
 
   fight() {
+    if (this.ammo <= 0) {
+      return;
+    } else {
     this.alldamage += this.basedamage * this.ammo;
     this.ammo -= this.ammo;
     return this.alldamage;
   }
+}
 
   refill(amount: number) {
     for (let i:number = 0; i < amount; i++) {
@@ -114,6 +118,7 @@ export class F16 extends Aircraft {
   isPriority(): boolean {
     return false;
   }
+  
   refillNeed() {
     if (this.ammo < this.maxammo) {
       return true;
@@ -161,12 +166,17 @@ let hulu = new Carrier();
 let bela = new Carrier();
 hulu.addPlane(sanyi);
 hulu.addPlane(lali);
-//hulu.add();
-//hulu.add();
-//hulu.fill(0);
-//console.log(hulu);
 hulu.fill(1000);
-console.log(hulu);
+
 hulu.fight(bela);
+hulu.fill(1000);
+hulu.getStatus();
+console.log(bela);
+hulu.fight(bela);
+hulu.fill(1000);
+hulu.getStatus();
+console.log(bela);
+hulu.fight(bela);
+hulu.fill(1000);
 hulu.getStatus();
 console.log(bela);
