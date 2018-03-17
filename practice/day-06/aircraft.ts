@@ -1,15 +1,64 @@
 'use strict';
 export class Carrier {
+  ammostore: number;
+  health: number;
   planes: Aircraft[];
+  totaldamage: number;
 
   constructor() {
     this.planes = [];
+    this.ammostore = 1000;
+    this.health = 5000;
+    this.totaldamage = 0;
   }
+
 
   addPlane(pl: Aircraft) {
     this.planes.push(pl);
   }
-}
+
+  add() {
+    this.planes.push(new F16);
+    this.planes.push(new F35);
+  }
+
+  fill (ammo: number) {
+    if (ammo <= 0) {   
+      console.log('Sorry, no fuel!')
+  } else if (ammo < this.ammostore) {
+      for (let i: number = 0; i < this.planes.length; i++) {
+        if (this.planes[i].isPriority() && this.planes[i].refillNeed()){
+          this.planes[i].refill(ammo);  
+        } 
+        //if (ammo > 0) {
+          //this.planes[i].refill(ammo);  
+       // }
+      }
+    }
+    else if (ammo >= this.ammostore) {  
+      for (let i: number = 0; i < this.planes.length; i++) {
+        if (this.planes[i].ammo < this.planes[i].maxammo) {
+          this.planes[i].refill(ammo);
+        } 
+      } 
+    }
+  }
+  fight(anothership: Carrier) {
+    if (this.health <= 0) {
+      console.log(`It is dead, Jim!`) 
+     } else {
+        for (let i: number = 0; i < this.planes.length; i++) {
+          this.totaldamage += this.planes[i].fight();
+          this.ammostore -= this.ammostore;
+          this.health -= this.totaldamage;
+      } return this.totaldamage;
+    }
+  } 
+
+  getStatus() {
+    console.log(`The carrier has ${this.planes.length} aircrafts. It has ${this.ammostore} ammo in storage. It\'a total damage is: ${this.totaldamage}. It\'s health points: ${this.health}`) 
+  }
+}  
 
 export class Aircraft extends Carrier {
   ammo: number;
@@ -27,11 +76,12 @@ export class Aircraft extends Carrier {
   getType(){
     return this.type;
   }
+
   getStatus() {
     console.log(`Type: ${this.type}, Ammo: ${this.ammo}, Base Damage: ${this.basedamage}, All Damage: ${this.alldamage}`) 
   }
 
-  fight(){
+  fight() {
     this.alldamage += this.basedamage * this.ammo;
     this.ammo -= this.ammo;
     return this.alldamage;
@@ -45,9 +95,8 @@ export class Aircraft extends Carrier {
     } console.log(`${amount - this.ammo} ammo remains.`)  
   } 
 
-  isPriority() {
-
-  }
+  isPriority() {}
+  refillNeed() {}
 }  
 
 export class F16 extends Aircraft {
@@ -61,8 +110,14 @@ export class F16 extends Aircraft {
     this.type = 'F16';
     this.maxammo = 8;
   }
+
   isPriority(): boolean {
     return false;
+  }
+  refillNeed() {
+    if (this.ammo < this.maxammo) {
+      return true;
+    }
   }
 }
 
@@ -77,14 +132,21 @@ export class F35 extends Aircraft {
     this.type = 'F35';
     this.maxammo = 12;
   }
+
   isPriority(): boolean {
     return true;
+  }
+
+  refillNeed() {
+    if (this.ammo < this.maxammo) {
+      return true;
+    }
   }
 }
 
 let sanyi = new F16();
 let lali = new F35();
-console.log(lali.getStatus());
+/*console.log(lali.getStatus());
 lali.refill(40);
 console.log(lali.getStatus());
 lali.fight();
@@ -93,4 +155,18 @@ sanyi.refill(30);
 console.log(sanyi.getStatus());
 sanyi.fight();
 console.log(sanyi.getStatus());
-console.log(sanyi.isPriority());
+console.log(sanyi.isPriority()); */
+
+let hulu = new Carrier();
+let bela = new Carrier();
+hulu.addPlane(sanyi);
+hulu.addPlane(lali);
+//hulu.add();
+//hulu.add();
+//hulu.fill(0);
+//console.log(hulu);
+hulu.fill(1000);
+console.log(hulu);
+hulu.fight(bela);
+hulu.getStatus();
+console.log(bela);
