@@ -23,10 +23,10 @@ class Crashes {
    getCrash () {
     let fileC: string = fs.readFileSync('crashes.txt', 'utf-8').split('\r\n');
     for (let i:number = 0; i < fileC.length; i++) {
-      if (fileC[i].indexOf('CLOUDY') !== -1 || fileC[i].indexOf('CLOUDY') !== -1 ) {
-        this.good ++;
+      if (fileC[i].indexOf('CLOUDY') !== -1 || fileC[i].indexOf('CLEAR') !== -1 ) {
+        this.bad ++;
       } else {
-        this.bad ++
+        this.good ++
       } 
     } return this.good, this.bad
   }
