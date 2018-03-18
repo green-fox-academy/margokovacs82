@@ -51,6 +51,8 @@ export class Plant extends Garden {
   waterIt (amount) { 
   this.waterLevel += amount;
   }
+
+  waterNeed() {}
 }
 
 export class Tree extends Plant {
