@@ -73,7 +73,13 @@ class Helicopter extends Vehicle implements Flyable{
         this.petrol = 0;
   }
 
-  land() {}
+  land() {
+    if (this.petrol < 2) {
+      console.log(`You only have ${this.petrol} liters of fuel, go land with the ${this.color} ${this.type}!`)
+    } else {
+      console.log(`You have ${this.petrol} liters of fuel, go further with the ${this.color} ${this.type}!`)
+    }
+  }
   
 }
 
@@ -121,7 +127,11 @@ class Plane extends Vehicle implements Flyable{
   }  
 
   land() {
-
+    if (this.petrol < 2) {
+      console.log(`You only have ${this.petrol} liters of fuel, go land with the ${this.color} ${this.type}!`)
+    } else {
+      console.log(`You have ${this.petrol} liters of fuel, go further with the ${this.color} ${this.type}!`)
+    }
   }
 }
 
@@ -139,3 +149,4 @@ heli.takeOff();
 heli.tanking(20);
 heli.fly(20);
 heli.getStatus();
+heli.land();
