@@ -61,12 +61,13 @@ export class Tree extends Plant {
     this.waterLevel += more * 0.4;
   }
   returnWlevel () {
+    let level: string = '';
     if (this.waterLevel < 5) {
-      console.log(`The ${this.color} ${this.type} needs water.`)
+      level = (`The ${this.color} ${this.type} needs water.`);
     } else {
-      console.log(`The ${this.color} ${this.type} doesn\'t need water.`)
-    }
-  }
+      level = (`The ${this.color} ${this.type} doesn\'t need water.`);
+    } return level;
+  } 
 }
 
 export class Flower extends Plant {
@@ -85,11 +86,12 @@ export class Flower extends Plant {
     this.waterLevel += more * 0.75;
   }
   returnWlevel () {
+    let level1: string = '';
     if (this.waterLevel < 5) {
-      console.log(`The ${this.color} ${this.type} needs water.`)
+      level1 = (`The ${this.color} ${this.type} needs water.`)
     } else {
-      console.log(`The ${this.color} ${this.type} doesn\'t need water.`)
-    }
+      level1 = (`The ${this.color} ${this.type} doesn\'t need water.`)
+    } return level1;
   }
 }
 
