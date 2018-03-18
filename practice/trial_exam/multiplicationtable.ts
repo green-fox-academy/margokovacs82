@@ -5,9 +5,10 @@
 
 function multi(base: number) {
   let result: number = 0;
+  let table: string = '';
   for (let j: number = 1; j <= 10; j++) {
-    console.log(j + ' * ' + base + ' = ' + (result = j * base));  
-  } 
+    table += (j + ' * ' + base + ' = ' + (result = j * base) + '\r\n');  
+  } return table;
 }
 console.log(multi(5));
 // The output should look like this for 5 as base:

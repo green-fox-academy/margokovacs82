@@ -28,9 +28,10 @@ export class Aquarium {
   }
 
   status() {
+    let slack: string = ''
     for (let i: number = 0; i < this.fishes.length; i++) {
-      console.log(`${this.fishes[i].name}, weight: ${this.fishes[i].weight}, color: ${this.fishes[i].color}, short-term memory loss: ${this.fishes[i].fishstatus}.`)
-    }
+      slack += (`${this.fishes[i].name}, weight: ${this.fishes[i].weight}, color: ${this.fishes[i].color}, short-term memory loss: ${this.fishes[i].fishstatus}.\r\n`)
+    } return slack; 
   }
 
   feed() {
