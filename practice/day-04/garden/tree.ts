@@ -1,5 +1,5 @@
 'use strict';
-import { Garden } from './garden';
+//import { Garden } from './garden';
 import { Plant } from './plants';
 
 export class Tree extends Plant {

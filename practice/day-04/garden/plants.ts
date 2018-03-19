@@ -1,15 +1,15 @@
 'use strict';
-import { Garden } from './garden';
-import { Flower } from './flower';
-import { Tree } from './tree';
+//import { Garden } from './garden';
+//import { Flower } from './flower';
+//import { Tree } from './tree';
 
-export class Plant extends Garden {
+export abstract class Plant {
   type: string;
   color: string;
   waterLevel: number;
   
   constructor(color: string) {
-    super()
+   
     this.color = color;
     this.waterLevel = 0;
   }
@@ -25,4 +25,5 @@ export class Plant extends Garden {
   waterIt (amount) { 
   this.waterLevel += amount;
   }
+  abstract waterNeed();
 }
