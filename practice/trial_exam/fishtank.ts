@@ -13,11 +13,6 @@
 
 export class Aquarium {
   fishes: Fish [];
-  name: string;
-  weight: number;
-  color: string;
-  fishstatus: boolean;
-  gain: number;
  
   constructor() {
     this.fishes = [];
@@ -28,10 +23,11 @@ export class Aquarium {
   }
 
   status() {
-    let slack: string = ''
+    let stat: string = '';
     for (let i: number = 0; i < this.fishes.length; i++) {
-      slack += (`${this.fishes[i].name}, weight: ${this.fishes[i].weight}, color: ${this.fishes[i].color}, short-term memory loss: ${this.fishes[i].fishstatus}.\r\n`)
-    } return slack; 
+      stat += this.fishes[i].getStatus();
+    }
+    return stat; 
   }
 
   feed() {
@@ -49,61 +45,56 @@ export class Aquarium {
   }
 }
 
-export class Fish extends Aquarium {
- 
-  constructor(name, weight, color, fishstatus?) {
-    super();
-  }
-}
-
-export class Clownfish extends Fish {
+export abstract class Fish {
   name: string;
   weight: number;
   color: string;
-  fishstatus: boolean;
   gain: number;
-
-  constructor(name, weight, color, fishstatus?) {
-    super(name, weight, color);
+  
+  constructor(name, weight, color) {
     this.name = name;
     this.weight = weight;
-    this.color = 'striped';
-    this.fishstatus = false;
+    this.color = color;
     this.gain = 1;
+  }
+
+  abstract getStatus();
+}
+
+export class Clownfish extends Fish {
+  stripeColor: string;
+
+  constructor(name, weight, color, stripeColor) {
+    super(name, weight, color);
+    this.stripeColor = stripeColor;
+  }
+
+  getStatus() {
+    return `${this.name}, weight: ${this.weight}, color: ${this.color}, stripe color: ${this.stripeColor}.\r\n`;
   }
 }
 
 export class Tang extends Fish {
-  name: string;
-  weight: number;
-  color: string;
   fishstatus: boolean;
-  gain: number;
-
+  
   constructor(name, weight, color, fishstatus?) {
     super(name, weight, color);
-    this.name = name;
-    this.weight = weight;
-    this.color = color;
     this.fishstatus = true;
-    this.gain = 1;
   } 
+
+  getStatus() {
+     return `${this.name}, weight: ${this.weight}, color: ${this.color}, short-term memory loss: ${this.fishstatus}.\r\n`;
+  }
 }
 
 export class Koi extends Fish {
-  name: string;
-  weight: number;
-  color: string;
-  fishstatus: boolean;
-  gain: number;
-
-  constructor(name, weight, color, fishstatus?) {
+  constructor(name, weight, color) {
     super(name, weight, color);
-    this.name = name;
-    this.weight = weight;
-    this.color = color;
-    this.fishstatus = false;
     this.gain = 2;
+  }
+
+  getStatus() {
+    return `${this.name}, weight: ${this.weight}, color: ${this.color}.\r\n`;
   }
 }
 
