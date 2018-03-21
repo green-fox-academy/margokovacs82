@@ -7,27 +7,34 @@
 # One animal should be stored only at once
 # Each animal should be written in separate lines
 # The program should only save animals, no need to print them*/
-'use strict';
 
 'use strict';
+//filebeolvasás
 const fs = require('fs');
 let fileContent = fs.readFileSync('./favorite.txt', 'utf-8');
 
+// nulla esetben üzenet
 function start(flag) {
   let index = process.argv.indexOf(flag);
   return (index === -1) ? null : process.argv[index];
 }
-  console.log(`fav_animals [animal] [animal]`);
-
-  for (let j = 0; j < process.argv.length; j++) {  
-    console.log(j + ' -> ' + (process.argv[j]));
-  }
-  
-if (process.argv[j] >= 2) {
-  let fileContent = '';
-  fileContent += '\r\n' + process.argv[j]; 
-  fs.writeFileSync('favorite.txt', fileContent);
+if (process.argv[2] === null) {
+console.log(`fav_animals [animal] [animal]`);
 }
-  
-console.log(fileContent);
+
+//fileírás duplikálás nélkül:
+let words = [];
+
+for (let j = 2; j < process.argv.length; j++) {
+  let word = process.argv[j];
+  if (words.indexOf(word) === -1) {
+    words.push(word);
+  }
+}
+
+fileContent += words.join('\r\n');
+
+fs.writeFileSync('favorite.txt', fileContent);
+//console.log(fileContent);
+
 
