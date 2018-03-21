@@ -5,8 +5,7 @@
 // Should print out:
 // ['n', 'g', 'r', 'm']
 
-'use strict';
-
+/* ez nem szedi ki az a-t, de csak egyszer adja vissza:
 export function uniqueCharacters (word: string) {
   let result: string[] = [];
   for(let i: number = 0; i < word.length; i++) {
@@ -16,6 +15,20 @@ export function uniqueCharacters (word: string) {
   }
   return result;
 }
-
-
 console.log(uniqueCharacters('anagram'))
+/*/
+
+'use strict';
+
+function unique (word: string) {
+  let base: string[] = word.split('');
+  let result: string [] = [];
+  for (let i: number = 0; i < base.length; i++) {
+    if (word.indexOf(base[i]) === word.lastIndexOf(base[i])) {
+      result.push(base[i])
+    }
+  } return result;
+}  
+console.log(unique('anagram'))
+
+
