@@ -30,17 +30,17 @@ export class Aquarium {
     return stat; 
   }
 
-  feed() {
-    for (let i: number = 0; i < this.fishes.length; i++) {
-      this.fishes[i].weight += this.fishes[i].gain;
-    }
-  }
-
   removeOversizedFishes() {
     for (let i: number = 0; i < this.fishes.length; i++) {
       if (this.fishes[i].weight >= 11) {
         this.fishes.splice(i, 1);
       }
+    }
+  }
+
+  feed() {
+    for (let i: number = 0; i < this.fishes.length; i++) {
+      this.fishes[i].weight += this.fishes[i].gain;
     }
   }
 }
@@ -59,6 +59,7 @@ export abstract class Fish {
   }
 
   abstract getStatus();
+  abstract feed();
 }
 
 export class Clownfish extends Fish {
@@ -71,6 +72,10 @@ export class Clownfish extends Fish {
 
   getStatus() {
     return `${this.name}, weight: ${this.weight}, color: ${this.color}, stripe color: ${this.stripeColor}.\r\n`;
+  }
+
+  feed() {
+    this.weight ++;
   }
 }
 
@@ -85,6 +90,10 @@ export class Tang extends Fish {
   getStatus() {
      return `${this.name}, weight: ${this.weight}, color: ${this.color}, short-term memory loss: ${this.fishstatus}.\r\n`;
   }
+
+  feed() {
+    this.weight ++;
+  }
 }
 
 export class Koi extends Fish {
@@ -95,6 +104,10 @@ export class Koi extends Fish {
 
   getStatus() {
     return `${this.name}, weight: ${this.weight}, color: ${this.color}.\r\n`;
+  }
+  
+  feed() {
+    this.weight + 2;
   }
 }
 
