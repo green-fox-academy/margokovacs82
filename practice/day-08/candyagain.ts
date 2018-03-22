@@ -45,8 +45,12 @@ export class CandyShop {
   }
 
   buySugar(amount: number) {
-    
-
+    if (amount / 10 <= this.moneystorage) {
+      this.moneystorage -= amount / 10;
+      this.sugarstorage += amount;
+    } else {
+      console.log(`You are poor.`)
+    }
   }
   
   print() {
@@ -94,10 +98,7 @@ candyshop.raiseprice(5)
 candyshop.sell('lollipop', 1)
 candyshop.print();
 //# 'Invetory: 1 candies, 1 lollipops, Income:30.5, Sugar: 270gr'
-
-/*
 candyshop.buySugar(300)
-//print(candy_shop)
+candyshop.print();
 //Should print out:
 //'Invetory: 1 candies, 1 lollipops, Income:5, Sugar: 570gr'
-*/
