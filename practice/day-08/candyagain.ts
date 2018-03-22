@@ -35,12 +35,14 @@ export class CandyShop {
 
   sell(type: string, piece: number) {
     if (type === 'candy') {
+      let actalPrice = this.candies[0].price;
       this.candies.length -= piece;
-      this.moneystorage += 10;
+      this.moneystorage += actalPrice;
     }
     if (type === 'lollipop') {
+      let actalPrice = this.lollipops[0].price;
       this.lollipops.length -= piece;
-      this.moneystorage += 20;
+      this.moneystorage += actalPrice;
     }
   }
 
@@ -94,7 +96,6 @@ candyshop.print();
 //# Should print out:
 //# 'Invetory: 1 candies, 2 lollipops, Income:20, Sugar: 270gr'
 candyshop.raiseprice(5)
-//console.log(candyshop);
 candyshop.sell('lollipop', 1)
 candyshop.print();
 //# 'Invetory: 1 candies, 1 lollipops, Income:30.5, Sugar: 270gr'
