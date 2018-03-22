@@ -17,13 +17,18 @@ export class CandyShop {
     this.candies.push(candie);
   }
 
-  add2(lolli: Lollipop) {
-    this.lollipops.push(lolli);
-  }
+  //add2(lolli: Lollipop) {
+    //this.lollipops.push(lolli);
+ // }
 
   createSweets(type: string) {
     if (type === 'lollipop') {
-
+      this.lollipops.push();
+      this.sugarstorage -= 5;
+    }
+    if (type === 'candy') {
+      this.candies.push();
+      this.sugarstorage -= 10;
     }
 
   }
