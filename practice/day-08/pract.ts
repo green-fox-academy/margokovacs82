@@ -34,18 +34,23 @@ console.log(showInfos(newarray));
 //  - amount of cash to transfer
 
 function transferAmount (accos: any [], fromAcc: number, toAcc: number, cash: number) {
+  let numbArr: number [] = [];
   for (let i: number = 0; i < accos.length; i++) {
-    if (accos[i].account_number === fromAcc) {
-      accos[i].balance -= cash;
-    }
-    if (accos[i].account_number === toAcc) {
-      accos[i].balance += cash;
-    } 
-  }  
-  //if ((fromAcc !== 11234543 || 43546731 || 23456311) || (toAcc !== 11234543 || 43546731 || 23456311)) {
-    //console.log (`404`);
-  //}
-  return accos; 
+    numbArr.push(accos[i].account_number);
+  }
+    if ((numbArr.indexOf(toAcc) === -1) || (numbArr.indexOf(fromAcc) === -1)) {
+      return (`404`);
+  } else 
+  { for (let i: number = 0; i < accos.length; i++) {
+      if (accos[i].account_number === fromAcc) {
+        accos[i].balance -= cash;
+      }
+      if (accos[i].account_number === toAcc) {
+        accos[i].balance += cash;
+      } 
+    }  
+    return accos; 
+  }
 }
 console.log(transferAmount(accounts, 43546731, 23456311, 500.0));
 // Log "404 - account not found" if any of the account numbers don't exist to the console.
