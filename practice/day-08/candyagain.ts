@@ -1,7 +1,6 @@
 'use strict';
 
 export class CandyShop {
-  inventory: string;
   sugarstorage: number;
   moneystorage: number;
   candies: Candie[];
@@ -12,7 +11,6 @@ export class CandyShop {
     this.lollipops = [];
     this.sugarstorage = sugarstorage;
     this.moneystorage = 0;
-    this.inventory = ` ${this.candies.length} candies, ${this.lollipops.length} lollipops, income: ${this.moneystorage}, sugar: ${this.sugarstorage}`;
   }
   
   createSweets(type: string) {
@@ -23,8 +21,8 @@ export class CandyShop {
     if (type === 'candy') {
       this.candies.push(new Candie);
       this.sugarstorage -= 10;  
-    }
-  }
+    } return this.sugarstorage
+  } 
 
   raiseprice(percent: number) {
     for (let i: number = 0; i < this.lollipops.length; i++) {
@@ -35,32 +33,46 @@ export class CandyShop {
     }
   }
 
-  sell() {}
-  buySugar() {}
+  sell(type: string, piece: number) {
+    if (type === 'candy') {
+      this.candies.length -= piece;
+      this.moneystorage += 10;
+    }
+    if (type === 'lollipop') {
+      this.lollipops.length -= piece;
+      this.moneystorage += 20;
+    }
+  }
 
+  buySugar(amount: number) {
+    
+
+  }
+  
+  print() {
+    console.log(`Inventory: ${this.candies.length} candies, ${this.lollipops.length} lollipops, income: ${this.moneystorage}, sugar: ${this.sugarstorage}`);
+  }
 }
 
 abstract class Sweets {
   price: number;
   sugarNeed: number;
-  type: string;
   
-  constructor(price, sugarNeed, type) {
+  constructor(price, sugarNeed) {
     this.price = price;
     this.sugarNeed = sugarNeed;
-    this.type = type;
   }
 }
 
 export class Lollipop extends Sweets {
-  constructor(price = 10, sugarNeed = 5, type = 'lollipop') {
-    super(price, sugarNeed, type)
+  constructor(price = 10, sugarNeed = 5) {
+    super(price, sugarNeed)
   }
 }
 
 export class Candie extends Sweets {
-  constructor(price = 20, sugarNeed = 10, type = 'candie') {
-    super(price, sugarNeed, type)
+  constructor(price = 20, sugarNeed = 10) {
+    super(price, sugarNeed)
   }
 }
 
@@ -70,22 +82,20 @@ candyshop.createSweets('candy')
 candyshop.createSweets('candy')
 candyshop.createSweets('lollipop')
 candyshop.createSweets('lollipop')
-console.log(candyshop);
-candyshop.raiseprice(5)
-console.log(candyshop);
-/*
-//print.candyshop???
+candyshop.print();
 // Should print out:
-// Invetory: 2 candies, 2 lollipops, Income: 0, Sugar: 270gr
+// Invetory: 2 candies, 2 lollipops, Income: 0, Sugar: 270g'
 candyshop.sell('candy', 1)
-//print(candy_shop)
+candyshop.print();
 //# Should print out:
 //# 'Invetory: 1 candies, 2 lollipops, Income:20, Sugar: 270gr'
-candyshop.raisePrice(5)
+candyshop.raiseprice(5)
+//console.log(candyshop);
 candyshop.sell('lollipop', 1)
-//print(candy_shop)
-//# Should print out:
+candyshop.print();
 //# 'Invetory: 1 candies, 1 lollipops, Income:30.5, Sugar: 270gr'
+
+/*
 candyshop.buySugar(300)
 //print(candy_shop)
 //Should print out:
