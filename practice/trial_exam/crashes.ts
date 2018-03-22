@@ -12,24 +12,30 @@
 const fs = require('fs');
 
 class Crashes {
-  bad: number = 0;
-  good: number = 0;
+  bad: number;
+  good: number;
+  
   
   constructor() {
-    this.good = this.good;
-    this.bad = this.bad;
+    this.good = 0;
+    this.bad = 0;
   }
 
    getCrash () {
-    let fileC: string = fs.readFileSync('crashes.txt', 'utf-8').split('\r\n');
+    try {
+    let fileC: string = fs.readFileSync('crashes.csv', 'utf-8').split('\r\n');
     for (let i:number = 0; i < fileC.length; i++) {
       if (fileC[i].indexOf('CLOUDY') !== -1 || fileC[i].indexOf('CLEAR') !== -1 ) {
-        this.bad ++;
+        this.good ++;
       } else {
-        this.good ++
+        this.bad ++
       } 
     } return this.good, this.bad
-  }
+    } 
+    catch(err) {
+      console.log('404');
+    }
+}
       
   print() {
     console.log(`The amount of crashes at good weather conditions: ${this.good}.\r\n The amount of crashes at bad weather conditions: ${this.bad}`)
