@@ -15,13 +15,12 @@ class Crashes {
   bad: number;
   good: number;
   
-  
   constructor() {
     this.good = 0;
     this.bad = 0;
   }
 
-   getCrash () {
+  getCrash () {
     try {
     let fileC: string = fs.readFileSync('crashes.csv', 'utf-8').split('\r\n');
     for (let i:number = 0; i < fileC.length; i++) {
