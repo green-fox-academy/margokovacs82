@@ -1,0 +1,40 @@
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-basis: 200px;
+  flex-direction: row;
+}
+
+
+.item {
+  align-self: flex-start;
+  min-width: 200px;
+  min-height: 200px;
+  
+}
+
+.green {
+  align-self: flex-end;
+  background-color: green;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.yellow {
+  align-self: flex-end;
+  background-color: yellow;
+  flex-grow: 2;
+  flex-shrink: 2;
+}
+
+.purple {
+  align-self: flex-end;
+  background-color: purple;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
