@@ -1,16 +1,17 @@
-
 .container {
   background-color: yellow;
   display: flex;
-  width: 800px;
+  width: 100%;
   height: 400px;
-  justify-content: space-around;
+  justify-content: left;
   align-items: center;
+  list-style-type: none;
 }
 
-.purple {
+.item {
   background-color: purple;
   width: 100px;
   height: 100px;
-  margin: auto;
+  align-items: left;
+  margin: 20px;
 }
