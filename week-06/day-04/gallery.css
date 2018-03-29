@@ -1,0 +1,55 @@
+* {box-sizing: 
+    border-box}
+    
+.slideshow {
+    background-color: rgb(247, 215, 220);
+    height: 470px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bigone {
+    max-height: 450px;
+    margin: auto;
+    order: 2;
+}
+
+.text {
+    color: rgb(99, 41, 37);
+    font-style: oblique;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5cm;
+}
+
+#prev {
+    cursor: pointer;
+    font-size: 30px;
+    height: 100%;
+}
+
+#next {
+    cursor: pointer;
+    font-size: 30px;
+    height: 100%;
+}
+
+#prev:hover {
+    background-color: rgb(158, 145, 158);
+  }
+
+#next:hover {
+    background-color: rgb(158, 145, 158);
+  }  
+
+.thumb {
+max-height: 15%;
+margin: 20px;
+}
+
+.thumbnail {
+    position: relative;
+    margin: 20px;
+    display: flex;
+}
