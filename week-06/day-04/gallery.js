@@ -1,15 +1,15 @@
 
 let thumbs = document.querySelectorAll(".thumb");
 thumbs.forEach(element => {
-  element.addEventListener('click', ShowSomething);
+  element.addEventListener('click', ShowPicture);
 });
 
-function ShowSomething(event) {
+function ShowPicture(event) {
 let showone = document.querySelector('#bigone');
   showone.src = event.target.currentSrc;
 }
 
-let counter =0;
+let counter = 0;
 let picList = document.querySelectorAll(".pic");
 
 function next() {
