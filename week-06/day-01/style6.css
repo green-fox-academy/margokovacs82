@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .wrapper{
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+  
+  nav{
+    background: purple;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  nav li {
+    background-color: cyan;
+    text-decoration: none;
+    text-align: center;
+    height: 20px;
+    width: 50px;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  #main {
+    background-color: yellow;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
+    flex: 1, 1;
+    position: relative;
+    top: 100px;
+    margin: 10px;
+    padding: 0; 
+  }
+
+  article {
+    display: flex; 
+    flex-flow: row; 
+    margin: 10px;
+  }
+  
+  .square {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+  
+  .redboxes {
+    display: flex;
+    margin: 10px;
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    justify-content: space-around;
+    background-color: #ff0037;
+  }
+
+  #column {
+    display: flex; 
+    margin: 10px;
+  }
+
+  p {
+      margin: 20px;
+  }
+  
+  #aside {
+    background-color: green;
+    display: flex; 
+    min-width: 33%;
+    flex-flow: column; 
+    position: relative;
+    top: 100px;
+    flex: 2, 1;
+    margin: 10px;
+    padding: 0; 
+  }
+  
+  .box {
+    display: flex;
+    margin: 10px 20px;
+    width: auto;
+    max-width: 250px;
+    height: 50px;
+    justify-content: space-around;
+    background-color: purple;
+  }
+  
