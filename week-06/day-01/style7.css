@@ -1,0 +1,136 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .wrapper{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+  
+  nav{
+    background: purple;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  nav li {
+    background-color: cyan;
+    text-decoration: none;
+    text-align: center;
+    height: 20px;
+    width: 50px;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  #main1 {
+    background-color: green;
+    width: 48%;
+    max-width: 600px;
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    flex-flow: row;
+    flex: 1, 1;
+    position: relative;
+    top: 100px;
+    margin: 5px;
+  }
+
+  #main2 {
+    background-color: yellow;
+    width: 48%;
+    max-width: 600px;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    flex: 1, 1;
+    position: relative;
+    top: 100px;
+    margin: 5px;
+  }
+
+  #main3 {
+    background-color: greenyellow;
+    width: 48%;
+    max-width: 600px;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    flex: 1, 1;
+    position: relative;
+    top: 100px;
+    margin: 5px;
+  }
+
+  p {
+    margin: 10px;
+  }
+
+  #aside1 {
+    background-color: greenyellow;
+    width: 23%;
+    max-width: 400px;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    flex: 2, 2;
+    position: relative;
+    top: 100px;
+    margin: 5px;
+    justify-content: center;
+  }
+
+  #aside2 {
+    background-color: greenyellow;
+    width: 23%;
+    max-width: 400px;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    flex: 2, 2;
+    position: relative;
+    top: 100px;
+    margin: 5px;
+    justify-content: center;
+  }
+  
+  .box {
+    display: flex;
+    margin: 10px;
+    width: 200px;
+    height: 260px;
+    background-color: #ff0037;
+  }
+  
+  .footer {
+    background-color: blue;
+    width: 100%;
+    height: 100px;
+    margin: 10px auto;
+    position: relative;
+    top: 100px;
+    margin: 10px;
+  }
