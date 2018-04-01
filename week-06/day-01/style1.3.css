@@ -3,41 +3,31 @@
   height: 100%;
   background-color: grey;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 200px;
-  flex-direction: row;
-  flex-wrap: wrap
+  flex-wrap: wrap-reverse;
 }
 
-
 .item {
-  align-self: flex-start;
   min-width: 200px;
-  min-height: 200px; 
+  min-height: 200px;
 }
 
 .green {
-  align-self: flex-end;
   background-color: green;
-  flex-grow: 1;
-  flex-shrink: 1;
-  order: 2;
+  width: 33%;
+  flex: 1;
+  order: 3;
 }
 
 .yellow {
-  align-self: flex-end;
   background-color: yellow;
-  flex-grow: 2;
-  flex-shrink: 2;
-  order: 1;
+  width: 33%;
+  flex: 2;
+  order: 2;
 }
 
 .purple {
-  align-self: flex-end;
+  width: 33%;
   background-color: purple;
-  flex-grow: 1;
-  flex-shrink: 1;
-  order: 0;
+  flex: 1;
+  order: 1;
 }
-

@@ -1,10 +1,11 @@
 
 .container {
   background-color: yellow;
-  display: flex;
   width: 800px;
   height: 400px;
-  justify-content: space-around;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
   align-items: center;
 }
 
@@ -12,5 +13,4 @@
   background-color: purple;
   width: 100px;
   height: 100px;
-  margin: auto;
 }
