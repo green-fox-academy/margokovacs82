@@ -15,11 +15,12 @@
     function delay() {
         let p = document.createElement('p');
         p.textContent = '2 seconds ellapsed';
-        setTimeout(() => { body.appendChild(p); }, 2000);
+        setTimeout(() => { body.appendChild(p).toggle; }, 2000);
     } 
-
     button.addEventListener('click', delay);
 
     </script>
      </body>
      </html>
+
+     

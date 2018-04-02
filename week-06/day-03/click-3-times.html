@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tree times</title>
+  </head>
+  <body>
+    <button>Click here 3 times!</button>
+     <p>You have to wait 5 secs then click!</p>
+
+    <script>
+    var button = document.querySelector('button');
+    var text = document.querySelector('p');
+    var clicks = 0
+      
+    button.addEventListener('click', function (event) {
+      if (event.detail === 3) {
+        text.innerText = `At least 5 seconds ellapsed and clicked at least 3 times`;
+      }
+      setTimeout(event, 5000);  
+    });
+
+    </script>
+     </body>
+     </html>
+
+     
