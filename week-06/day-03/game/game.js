@@ -25,7 +25,7 @@ function buyLolli() {
     lolli.textContent += '🍭';
     candinumber -= 100;
     candyRefresh();
-    } 
+  } 
 }
 buylolli.addEventListener('click', buyLolli);
 
@@ -47,7 +47,7 @@ if (lolli.innerHTML.length >= 20) {
 var rain = document.querySelector(".candy-machine");
 
 function candyRain() {
-window.setInterval(function () {
+  window.setInterval(function () {
     candinumber = candinumber + 1;
     candyRefresh();
   }, 100);
