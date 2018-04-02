@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: CreateElement</title>
+  </head>
+  <body>
+    <ul class="asteroids">
+      <li id="b325" class="asteroid">The King</li>
+      <li class="asteroid b326">The Conceited Man</li>
+    </ul>
+    <div class="container"></div>
+    <style>
+            .red {
+              color: red;
+            }
+    </style>
+    <p class="apple">apple</p>
+    <p class="balloon">balloon</p>
+    <p class="cat red-dot">cat</p>
+    <p>dolphin</p>
+
+    <script>
+
+    var plist = document.querySelectorAll("p");
+        if (plist[3].classList.contains("dolphin")) {
+            plist[0].textContent = 'pear';
+        }
+        if (plist[0].classList.contains("apple")) {
+            plist[2].textContent = 'dog';
+        }
+    console.log(plist);
+
+    plist[0].classList.add('red');
+    
+    const asteroidlist = document.querySelector("ul.asteroids");
+    const newEl = document.createElement("li");
+    newEl.id = "b555";
+    newEl.textContent = "The Green Fox";
+    asteroidlist.appendChild(newEl);
+
+    const newEl2 = document.createElement("li");
+    newEl2.id = "b666";
+    newEl2.textContent = "The lamplighter";
+    asteroidlist.appendChild(newEl2);
+
+    const conti = document.querySelector(".container");
+    let newstring = document.createElement("p");
+    newstring.textContent = 'I can add elements to the DOM!';
+    conti.appendChild(newstring);
+
+    let newimg = document.createElement("img");
+    newimg.setAttribute('src', 'https://i.ytimg.com/vi/-pzckbNyqfc/hqdefault.jpg');
+    conti.appendChild(newimg);
+
+</script>
+
+</body>
+</html>
+
+<!-- You can work in the html or in a separate js file. Like:
+   
+  //    Add an item that says 'The Green Fox' to the asteroid list.
+    //  Add an item that says 'The Lamplighter' to the asteroid list.
+      //Add a heading saying 'I can add elements to the DOM!' to the .container.
+      //Add an image, any image, to the container.
+     //-->
+
+  
