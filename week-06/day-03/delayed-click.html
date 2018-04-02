@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Delay</title>
+  </head>
+  <body>
+    <button>Click here!</button>
+    
+
+    <script>
+    var button = document.querySelector('button');
+    var body = document.querySelector('body');
+    
+    function delay() {
+        let p = document.createElement('p');
+        p.textContent = '2 seconds ellapsed';
+        setTimeout(() => { body.appendChild(p); }, 2000);
+    } 
+
+    button.addEventListener('click', delay);
+
+    </script>
+     </body>
+     </html>
