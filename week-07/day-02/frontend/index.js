@@ -136,17 +136,18 @@ app.post('/yoda/', function(req, res) {
 		str.push(sentences[i].split(' '));
 	}
 	
-	let newStr = [];
+	let newStr = '';
 	for (let i=0; i < str.length; i++) {
 	  for (let j=0; j<str[i].length; j+=2) {
 		  if (str[i][j+1] !== undefined) {
-			newStr.push(str[i][j+1]);
+			newStr += (str[i][j+1]) + ' ';
 		  }
-		    newStr.push(str[i][j]);
-	  }
+		    newStr += (str[i][j]) + ' ';
+		}
+		newStr += '.';
 	} 
 		
 	res.json({
-		"result": newStr.join(' ')
+		"result": newStr
 	});
 });
