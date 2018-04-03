@@ -98,19 +98,24 @@ app.post('/dountil/:thing', function(req, res) {
 //POST: ARRAY HANDLER, array and 'what' is given in body:
 app.post('/arrays/', function(req, res) {
     const what = req.body.what;
-    if (what === 'sum') {
+    if (what === undefined) {
+        res.json({
+            error: "Please provide what to do with the numbers!"
+        })
+    }
+    else if (what === 'sum') {
         result = 0;
         for (let i=0; i<req.body.numbers.length; i++ ) {
         result += req.body.numbers[i];
        }
     } 
-    if (what === 'multiply') {
+    else if (what === 'multiply') {
         result = 1;
         for (let i=0; i<req.body.numbers.length; i++ ) {
             result *= req.body.numbers[i];
         }
     } 
-    if (what === 'double') {
+   else if (what === 'double') {
         result = []
         for (let i=0; i<req.body.numbers.length; i++ ) {
             result.push(req.body.numbers[i] * 2);
