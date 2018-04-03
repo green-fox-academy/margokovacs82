@@ -4,34 +4,24 @@ const PORT = 8080;
 const path = require('path');
 const bodyParser = require('body-parser');
 
+//uses express 
 app.use('/assets', express.static('assets'));
 
-app.use(bodyParser.json());
-
-app.post('/dountil/:thing', function(req, res) {
-    const thing = req.params.thing;
-    let numb = 1;
-    if (thing === 'sum') {
-        for (let i=2; i<req.body.until + 1; i++ ) {
-        numb = numb + i;
-       }
-    } 
-    if (thing === 'factor') {
-        for (let i=2; i<req.body.until + 1; i++ ) {
-            numb *= i;
-        }
-    } 
-    res.json({
-        "result": numb
-    });
-});
-
-
+//understands get:
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
 
+//understands post:
+app.use(bodyParser.json());
 
+//where is port:
+app.listen(PORT, () => {
+    console.log(`Server is up on port ${PORT}`);
+});
+
+
+//GET: DOUBLING receives input in url with ? (query)
 app.get('/doubling', (req, res) => {
     const input = req.query.input;
     console.log(input);
@@ -47,6 +37,8 @@ app.get('/doubling', (req, res) => {
     }
 });
 
+
+//GET: GREETER receives input in url with ? (query)
 app.get('/greeter', (req, res) => {
     const name = req.query.name;
     const title = req.query.title;
@@ -67,6 +59,8 @@ app.get('/greeter', (req, res) => {
     }
 });
 
+
+//GET: APPEND A receives info from url with /:
 app.get('/appenda/:appendable', (req, res) => {
     const appendable = req.params.appendable;
     console.log(appendable);
@@ -80,6 +74,49 @@ app.get('/appenda/:appendable', (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is up on port ${PORT}`);
+
+//POST: DO UNTIL adds numbers or multiplies them until the given number, number is given in body:
+app.post('/dountil/:thing', function(req, res) {
+    const thing = req.params.thing;
+    let numb = 1;
+    if (thing === 'sum') {
+        for (let i=2; i<req.body.until + 1; i++ ) {
+        numb = numb + i;
+       }
+    } 
+    if (thing === 'factor') {
+        for (let i=2; i<req.body.until + 1; i++ ) {
+            numb *= i;
+        }
+    } 
+    res.json({
+        "result": numb
+    });
+});
+
+
+//POST: ARRAY HANDLER, array and 'what' is given in body:
+app.post('/arrays/', function(req, res) {
+    const what = req.body.what;
+    if (what === 'sum') {
+        result = 0;
+        for (let i=0; i<req.body.numbers.length; i++ ) {
+        result += req.body.numbers[i];
+       }
+    } 
+    if (what === 'multiply') {
+        result = 1;
+        for (let i=0; i<req.body.numbers.length; i++ ) {
+            result *= req.body.numbers[i];
+        }
+    } 
+    if (what === 'double') {
+        result = []
+        for (let i=0; i<req.body.numbers.length; i++ ) {
+            result.push(req.body.numbers[i] * 2);
+        }
+    } 
+    res.json({
+        "result": result
+    });
 });
