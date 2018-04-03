@@ -5,14 +5,27 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 app.use('/assets', express.static('assets'));
+
 app.use(bodyParser.json());
 
-app.post('/api/endpoint', (req, res) => {
-    console.log(req.body.attr1);
+app.post('/dountil/:thing', function(req, res) {
+    const thing = req.params.thing;
+    let numb = 1;
+    if (thing === 'sum') {
+        for (let i=2; i<req.body.until + 1; i++ ) {
+        numb = numb + i;
+       }
+    } 
+    if (thing === 'factor') {
+        for (let i=2; i<req.body.until + 1; i++ ) {
+            numb *= i;
+        }
+    } 
     res.json({
-        message: 'ok',
+        "result": numb
     });
 });
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
@@ -54,6 +67,18 @@ app.get('/greeter', (req, res) => {
     }
 });
 
+app.get('/appenda/:appendable', (req, res) => {
+    const appendable = req.params.appendable;
+    console.log(appendable);
+    if (appendable === undefined) {
+        res.status(404);
+        res.end();
+    } else {
+        res.json ({
+            appended: appendable + 'a', 
+        })
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is up on port ${PORT}`);
