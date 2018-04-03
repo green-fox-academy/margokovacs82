@@ -19,18 +19,37 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/doubling/:input', (req, res) => {
-    const input = req.params.input;
+app.get('/doubling', (req, res) => {
+    const input = req.query.input;
     console.log(input);
     if (input === undefined) {
-        req.statusCode(404);
         res.json({
-            error:'provide input!'
+            error: 'Please provide an input!'
         })
     } else {
         res.json ({
             "received": input,
             "result": input * 2, 
+        })
+    }
+});
+
+app.get('/greeter', (req, res) => {
+    const name = req.query.name;
+    const title = req.query.title;
+    if (name === undefined) {
+        res.json({
+            error: 'Please provide a name!'
+        })
+    }
+    else if (title === undefined) {  
+        res.json({
+            error: 'Please provide a title!'
+        })
+    } else {
+        res.json ({
+            //name=Petike&title=student
+            "welcome_message": `Oh, hi there ${name}, my dear ${title}!`
         })
     }
 });
