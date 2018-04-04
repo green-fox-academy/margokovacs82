@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  background-color: rgb(184, 132, 175);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
+  margin: 20px;
+}
+
+form {
+background-color:  rgb(205, 191, 216);
+display: flex;
+flex-direction: column;
+margin: 20px;
+padding: 20px;
+border-radius: 3px;
+font-family: Arial, Helvetica, sans-serif
+}
+
+button {
+  padding: 10px;
+  margin: 30px;
+  border-radius: 50px;
+  justify-content: center;
+  display: inline;
+}
+
+label[for="dog"],
+label[for="cat"],
+label[for="rabbit"],
+label[for="no"],
+label[for="yes"]  {
+  font-size: 15px;
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
