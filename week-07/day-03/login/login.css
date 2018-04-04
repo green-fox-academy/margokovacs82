@@ -1,0 +1,75 @@
+.log{
+  font-size: 23px;
+  margin: 10;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  text-align: left;
+}
+
+#log {
+  margin: 0 20px;
+  border-bottom: 1px solid black;
+}
+
+#container {
+  background-color: rgb(163, 163, 153);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  margin: 20px;
+}
+
+fieldset {
+background-color:  #fff;
+padding: 5px 30px 60px 30px; 
+display: block;
+width: 300px;
+min-height: 180px;
+border-radius: 3px;
+font-family: Arial, Helvetica, sans-serif
+}
+
+.login {
+  font-size: 23px;
+  margin: 5px;
+}
+
+label[for="password"],
+label[for="email"] {
+  font-size: 15px;
+  margin: 5px;
+}
+
+input[type="password"],
+input[type="email"] {
+  width: 260px;
+  height: 30px;
+  display: block;
+  margin: 5px;
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover {
+  border-color: #b7d6af;
+}
+
+input[type="submit"] {
+  background-color: rgb(32, 30, 30);
+  border: hidden;
+  height: 35px;
+  width: 80px;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+button {
+  border: hidden;
+  margin: 10px;
+  margin-left: 150px;
+  background-color: #fff;
+}
