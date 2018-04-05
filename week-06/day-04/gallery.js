@@ -24,9 +24,32 @@ function next() {
 
 function prev() {
   if (counter === 0) {
-    counter = 7;
+    counter = thumbs.length - 1;
   } else {
   counter--;
   }
 document.querySelector('#bigone').setAttribute('src', picList[counter].getAttribute('src'));
 }
+
+let body = document.querySelector("body");
+body.addEventListener('keydown', (e) => {
+  if (e.keyCode === 37) {
+    if (counter === 0) {
+      counter = thumbs.length - 1;
+    } else {
+    counter--;
+    }
+    document.querySelector('#bigone').setAttribute('src', picList[counter].getAttribute('src'));
+  }
+});
+
+body.addEventListener('keydown', (e) => {
+  if (e.keyCode === 39) {
+    if (counter === thumbs.length - 1) {
+      counter = 0;
+    } else {
+    counter++;
+    }
+    document.querySelector('#bigone').setAttribute('src', picList[counter].getAttribute('src'));
+  }
+});

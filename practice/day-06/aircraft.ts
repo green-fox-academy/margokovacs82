@@ -20,27 +20,25 @@ export class Carrier {
     this.planes.push(new F16);
     this.planes.push(new F35);
   }
+  getStatus() {
+    console.log(`The carrier has ${this.planes.length} aircrafts. It has ${this.ammostore} ammo in storage. It\'a total damage is: ${this.totaldamage}. It\'s health points: ${this.health}`) 
+  }
 
-  fill(ammo: number) {
-    if (ammo <= 0) {   
-      console.log('Sorry, no fuel!')
-  } else if (ammo < this.ammostore) {
-      for (let i: number = 0; i < this.planes.length; i++) {
-        if (this.planes[i].isPriority() && this.planes[i].refillNeed()){
-          this.planes[i].refill(ammo);  
-        } 
-        //if (ammo > 0) {
-          //this.planes[i].refill(ammo);  
-       // }
+  fill() {
+    if (this.ammostore <= 0) {
+      return ('Sorry, no fuel!')
+    } 
+    for (let i: number = 0; i < this.planes.length; i++) {
+      if (this.planes[i].isPriority() && this.planes[i].refillNeed()){
+        this.ammostore = this.planes[i].refill(this.ammostore);
       }
     }
-    else if (ammo >= this.ammostore) {  
-      for (let i: number = 0; i < this.planes.length; i++) {
-        if (this.planes[i].ammo < this.planes[i].maxammo) {
-          this.planes[i].refill(ammo);
-        } 
-      } 
-    }
+    for (let i: number = 0; i < this.planes.length; i++) {
+      if (!this.planes[i].isPriority() && this.planes[i].refillNeed()){
+        this.ammostore = this.planes[i].refill(this.ammostore);
+      }
+    }  
+    return this.ammostore; 
   }
 
   fight(anothership: Carrier) {
@@ -48,16 +46,13 @@ export class Carrier {
           this.totaldamage += this.planes[i].fight();
           this.ammostore -= this.ammostore;
           anothership.health -= this.totaldamage;
-        } if (anothership.health <= 0) {
-            console.log (`It is dead, Jim!`);
+        } 
+        if (anothership.health <= 0) {
+        console.log (`It is dead, Jim!`);
       } else {
         return this.totaldamage;
     }
   } 
-
-  getStatus() {
-    console.log(`The carrier has ${this.planes.length} aircrafts. It has ${this.ammostore} ammo in storage. It\'a total damage is: ${this.totaldamage}. It\'s health points: ${this.health}`) 
-  }
 }  
 
 export class Aircraft extends Carrier {
@@ -78,7 +73,7 @@ export class Aircraft extends Carrier {
   }
 
   getStatus() {
-    console.log(`Type: ${this.type}, Ammo: ${this.ammo}, Base Damage: ${this.basedamage}, All Damage: ${this.alldamage}`) 
+    console.log(`Type: ${this.type}, Ammo: ${this.ammostore}, Base Damage: ${this.basedamage}, All Damage: ${this.alldamage}`) 
   }
 
   fight() {
@@ -94,9 +89,11 @@ export class Aircraft extends Carrier {
   refill(amount: number) {
     for (let i:number = 0; i < amount; i++) {
       if (this.ammo < this.maxammo) {
-        this.ammo += amount / amount;
+        this.ammo += 1;
+        amount--;
       } 
-    } console.log(`${amount - this.ammo} ammo remains.`)  
+    } 
+    return amount;  
   } 
 
   isPriority() {}
@@ -166,17 +163,27 @@ let hulu = new Carrier();
 let bela = new Carrier();
 hulu.addPlane(sanyi);
 hulu.addPlane(lali);
-hulu.fill(1000);
+hulu.fill();
 
+hulu.getStatus();
+bela.getStatus();
+hulu.fill();
+hulu.getStatus();
+hulu.fill();
 hulu.fight(bela);
-hulu.fill(1000);
+bela.fight(hulu);
+hulu.getStatus();
+
+/*
+hulu.fight(bela);
+hulu.fill();
 hulu.getStatus();
 console.log(bela);
 hulu.fight(bela);
-hulu.fill(1000);
+hulu.fill();
 hulu.getStatus();
 console.log(bela);
 hulu.fight(bela);
-hulu.fill(1000);
+hulu.fill();
 hulu.getStatus();
-console.log(bela);
+console.log(bela); */

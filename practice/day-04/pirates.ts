@@ -24,19 +24,22 @@ class PirateCrew {
        console.log(`R.I.P ${name}`); 
   }
 
-  brawl(x, y) {
+  /*brawl(x, y) {
     for (let i: number = 0; i < this.pirates.length; i++) {
       let x = this.pirates[i];
       let y = this.pirates[i + 1];
-       console.log(`R.I.P ${this.pirates[i].name}`)
+
+      //random szám 0-1-2, és ha 0 ez, ...
+
+    console.log(`R.I.P ${this.pirates[i].name}`)
      } else {
       console.log(`R.I.P ${this.pirates[i + 1].name}`)
      }
     }
   }
+*/
 
-
-
+}
 
 class Pirate extends PirateCrew {
   name: string;
@@ -82,4 +85,7 @@ jani.howsGoingMate();
 laci.die('laci');
 laci.drinkRum(1)
 
-laci.brawl(jani, lara);
+//laci.brawl(jani, lara);
+
+let pirate = new PirateCrew();
+console.log(pirate);

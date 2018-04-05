@@ -14,16 +14,17 @@ function triangles(x: number, y: number){
         x = i * 10;
       
         for (let j:number = 1; j <= linesAndHeightsOfTriangles - i; j++){
-        ctx.beginPath();
-        ctx.moveTo(x, y); 
-        ctx.lineTo(x + 20, y); 
-        ctx.lineTo(x + 10, y -20); 
-        ctx.lineTo(x, y);  
-        ctx.stroke();
-        let grdmg = ctx.createRadialGradient(390, 140, 100, 370, 140, 0);
-        grdmg.addColorStop(0, 'hsla(300, 40%, 70%, 0.7)');
-        grdmg.addColorStop(1, 'hsla(60, 50%, 50%, 0.5)');
-        ctx.strokeStyle = grdmg;
+            let grdmg = ctx.createRadialGradient(390, 140, 100, 370, 140, 0);
+            grdmg.addColorStop(0, 'hsla(300, 40%, 70%, 0.7)');
+            grdmg.addColorStop(1, 'hsla(60, 50%, 50%, 0.5)');
+            ctx.strokeStyle = grdmg;
+            ctx.beginPath();
+            ctx.moveTo(x, y); 
+            ctx.lineTo(x + 20, y); 
+            ctx.lineTo(x + 10, y -20); 
+            ctx.lineTo(x, y);  
+            ctx.stroke();
+        
 
         x += 20;         
     }

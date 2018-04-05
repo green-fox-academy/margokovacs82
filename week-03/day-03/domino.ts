@@ -8,3 +8,4 @@ class Domino {
 }
 
 export {Domino};
+

@@ -12,6 +12,12 @@ export class Garden {
     this.plants.push(pl);
   }
 
+  listFlowers() {
+    this.plants.forEach(element => {
+      console.log(`${element.color} ${element.type}: ${element.waterLevel}`);
+    });
+  }
+
   waterThem (amount) {
     let thirsty: number = 0;
     for (let i: number = 0; i < this.plants.length; i++) {
@@ -27,13 +33,13 @@ export class Garden {
   }
 }
 
-export class Plant extends Garden {
+export class Plant {
   type: string;
   color: string;
   waterLevel: number;
 
   constructor (color) {
-    super();
+  
     this.color = color;
     this.waterLevel = 0;
   }
@@ -116,4 +122,4 @@ console.log(park);
 console.log(flora.returnWlevel());
 console.log(jurgen.returnWlevel());
 park.waterThem(40);
-console.log(park);
+park.listFlowers();

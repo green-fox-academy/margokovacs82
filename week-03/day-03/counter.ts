@@ -27,7 +27,7 @@ class Counter {
 }
 let counter = new Counter;
 console.log(counter.get());
-counter.add(10);
+counter.add(11);
 console.log(counter.get());
 counter.reset();
 console.log(counter.get());

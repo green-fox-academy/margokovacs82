@@ -78,7 +78,13 @@ export class Sponsor extends Person{
   }
 }
 
-let people = [];
+
+
+let mark = new Student("Mark", 35, "male", "Index.hu");
+console.log(mark.introduce());
+console.log(mark.getGoal());
+
+/*let people = [];
 let mark = new Person('Mark', 46, 'male');
 people.push(mark);
 let jane = new Person('Jane Doe', 30, 'female');
@@ -109,4 +115,4 @@ for (let person of people) {
   person.getGoal();
 }
 
-console.log(people);
+console.log(people); */

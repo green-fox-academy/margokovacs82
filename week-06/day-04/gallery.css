@@ -52,6 +52,10 @@ max-height: 15%;
 margin: 20px;
 }
 
+.thumb:hover {
+    transform: scale(1.1);
+}
+
 .thumbnail {
     position: relative;
     margin: 20px;
