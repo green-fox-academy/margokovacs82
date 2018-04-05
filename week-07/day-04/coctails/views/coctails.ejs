@@ -22,7 +22,6 @@
 
     </div>
 
-
     <table>
       <thead>
         <tr>
@@ -35,7 +34,13 @@
           <tr>
             <td>
               <div>
+                <% let virgin = '';
+                if (cock.isAlcoholic === false) {
+                  virgin = '(non-alcoholic)'
+                };
+                %>
                 <%= cock.name%>
+                <%= virgin%>
               </div>
               <div>
                 <%= cock.contains.join(', ')%>
