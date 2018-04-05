@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
       cocktails, 
       alcoholList,
     });
-  }
+  } else {
   const selectedcock = cocktails.filter(e => (
     e.contains.indexOf(alcohol) !== -1
   ));
@@ -34,7 +34,9 @@ app.get('/', (req, res) => {
     cocktails: selectedcock, 
     alcoholList,
   });
+}
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
