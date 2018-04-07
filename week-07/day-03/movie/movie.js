@@ -5,6 +5,8 @@
 const genre = document.querySelector('#genre');
 const movies = document.querySelector('#movie');
 const filmList = movies.querySelectorAll('option');
+//console.log(movies);
+//console.log(filmList);
     
 function filterToGenre(e) {
   for (let i = 0; i < filmList.length; i++) {
