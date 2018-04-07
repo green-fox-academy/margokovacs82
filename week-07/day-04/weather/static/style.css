@@ -1,0 +1,55 @@
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, 
+body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  text-shadow: 4px 4px 4px #aaa;
+  color: rgb(66, 60, 60);
+  background: rgb(207, 218, 219);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 350px;
+  border-collapse: collapse;
+  background-color:white;
+  text-align: center; 
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+img {
+max-width: 100px;
+max-height: auto;
+}
+
+.temp {
+ font-size: 200%;
+}
+
+a {
+  color: rgb(66, 60, 60);
+  display: flex;
+  text-align: center; 
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 20px;
+}
+
+a:hover {
+ color: teal;
+}
