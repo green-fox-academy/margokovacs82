@@ -1,36 +1,27 @@
+'use strict';
+
 //Changing the first dropdown should change the contents of the second one
-var movies = document.getElementById("movie")
 
-function addAllOptions(selectID, values)
-  {
-    var arrayLength = values.length;
-    for (var i = 0; i < arrayLength; i++) {
-        appendOptionLast(selectID,values[i]);
+const genre = document.querySelector('#genre');
+const movies = document.querySelector('#movie');
+const filmList = movies.querySelectorAll('option');
+    
+function filterToGenre(e) {
+  for (let i = 0; i < filmList.length; i++) {
+    if (filmList[i].className === e.target.value) {
+      filmList[i].disabled = false;
     }
   }
-  
-  //http://plnkr.co/edit/7xp5W6ViI9a1EvskFVZz?p=preview
+};
 
-function setOptions()
-  {
-    var genre = document.getElementById("genre");
-    var selIndex = genre.selectedIndex;
-    if(selIndex == 0)
-      addAllOptions(movies.value);
-    else if(selIndex == 1){
-      addAllOptions('s2', ["Pasta Napoli","Pasta Primavera", "Pasta Vatican"]);
-    }
-    else{
-      addAllOptions('s2', ["Hot Dog Chilie King","Hot Dog Silent Wiener"]);
-    }
-  }
+genre.addEventListener('change', filterToGenre);
 
 
 //display the selected movie
 
-document.addEventListener('DOMContentLoaded',function() {
-  document.querySelector('select[name="movie"]').onchange=changeEventHandler;
-},false);
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('select[name="movie"]').onchange = changeEventHandler;
+}, false);
 
 var movie = document.querySelector('p');
 
@@ -38,8 +29,8 @@ function changeEventHandler(event) {
   if(!event.target.value) {
     alert('Please Select One');
   } else {
-  let myChoice = document.createElement('p');
-  myChoice.innerText = event.target.value;
-  movie.appendChild(myChoice);
+    let myChoice = document.createElement('p');
+    myChoice.innerText = event.target.value;
+    movie.appendChild(myChoice);
   }
 }

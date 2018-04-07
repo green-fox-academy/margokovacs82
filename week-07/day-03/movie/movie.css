@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  text-shadow: 4px 4px 4px #aaa;
+  background: rgb(207, 218, 219);
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color:white;
+  color:  rgb(58, 52, 52);
+  font-size: 14px;
+  margin: 20px;
+  padding: 20px;
+  max-width: 350px;
+  min-height: 100px;
+}
+
+p {
+  font-size: 150%;
+  margin: 30px;
+}
+
+p:hover {
+  color: teal;
+  position: relative; 
+  top: -5px;
+ }
+
+ label:hover {
+   background-color: rgb(253, 245, 235);
+ }
