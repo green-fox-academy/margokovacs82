@@ -7,11 +7,13 @@
 //  - Initialize the petrol level to zero and the capacity to 50 
 
 const car = {
-  petrolLevel: 0,
+  petrolLevel: 10,
   petrolCapacity: 50,
-  consumption: 0.12,
+  consumption: 0.1,
   km: 35,
-  refill: function (amount) {
+  refill: function () {
+    let amount = this.petrolCapacity - this.petrolLevel;
+    console.log(amount);
     this.petrolLevel += amount;
     amount -= this.km * this.consumption; 
   },
@@ -28,17 +30,21 @@ const car = {
 //  - Initialize the petrol amount to 3000
 
 const station = {
-  petrolStorage: 3000,
+  petrolStorage: 30,
   provide: function (car) {
-    const amount = car.petrolCapacity - car.petrolLevel;   
-    car.refill(amount);
-      this.petrolStorage -= amount;
+    let petrolAmount = car.petrolCapacity - car.petrolLevel;   
+    if (this.petrolStorage > petrolAmount) {
+    car.refill();
+      this.petrolStorage -= petrolAmount;
       return this.petrolStorage;
-   } 
+    } else {
+      conole.log('nothing');
+    } 
+  }
 }
 
 console.log(car.petrolLevel);
-car.refill(30);
+car.refill();
 console.log(car.petrolLevel);
 car.ride(30);
 console.log(car.petrolLevel);
