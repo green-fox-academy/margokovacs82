@@ -27,7 +27,34 @@
              </div>
           <% }) %>
         </div>
+        <div class="input-form">
+            <form>
+              <label for="title">
+                <span>Title:</span>
+                <input id="title" name="title" class="form-input">
+              </label>
+              <label for="price">
+                <span>Price:</span>
+                <input id="price" name="price" class="form-input">
+              </label>
+  
+              <label for="type-selector">
+                <span>Type:</span>
+                <select id="type-selector" name="type">
+                  <option value="0" disabled selected>Choose one</option>
+                </select>
+              </label>
+  
+              <label for="date">
+                <span>Date (YYYY-MM-DD):</span>
+                <input id="date" name="date" class="form-input">
+              </label>
+  
+              <button type="submit" id="form-submit-button">Submit</button>
+            </form>
+          </div>
       </main>
     </div>
+    <script src="/static/script.js"></script>
   </body>
 </html>
