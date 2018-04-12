@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <title>MySQL posts</title>
+  </head>
+  <body>
+   <h2>
+     <ul>
+       <% results.forEach( (results) => { %>
+        <li><%= (`${results.id}: '${results.content}' posted by 
+          ${results.user} at ${results.date_posted.toString().slice(0, 15)}`); %>
+    <% }); %></li>
+    </ul>
+  </h2>
+  </body>
+</html>
