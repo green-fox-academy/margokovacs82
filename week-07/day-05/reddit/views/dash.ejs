@@ -1,18 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
-    <title>MySQL posts</title>
-  </head>
-  <body>
-   <h2>
-     <ul>
-       <% results.forEach( (results) => { %>
-        <li><%= (`${results.id}: '${results.content}' posted by 
-          ${results.user} at ${results.date_posted.toString().slice(0, 15)}`); %>
-    <% }); %></li>
-    </ul>
-  </h2>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    Dashboard
+  </title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+    <div>
+      <h1>Welcome to Reddit</h1>
+    </div>
+    </br>
+    <h1>All about space... or, life</h1>
+    <img id="header-img" src="//b.thumbs.redditmedia.com/CltPFEKKCn6cw7Qc0_uoQl7HY6jGdpCGQSL6PgadzyY.png" width="100" height="100"
+      alt="space">
+
+  </header>
+  <main class="main">
+
+    <div id="history">
+      <% posts.forEach(item => { %>
+        <div class="history-item">
+
+          <div class="item-title">
+            <h2>
+              <a href="<%= item.url %>"target="_blank">
+                <%= item.title %>
+              </a>
+            </h2>
+          </div>
+          <div class="item-score">
+            <%= item.score %>
+          </div>
+          <div class="item-owner">
+            <%= item.owner %>
+          </div>
+          <div class="item-date">
+            <%= moment(item.date).format('YYYY-MM-DD') %>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+    <div class="input-form">
+      <form>
+        <label for="title">
+          <span>Title:</span>
+          <input id="title" name="title" class="form-input">
+        </label>
+        <label for="url">
+          <span>Url:</span>
+          <input id="url" name="url" class="form-input">
+        </label>
+
+        <label for="owner">
+          <span>Owner:</span>
+          <input id="owner" name="owner" class="form-input">
+
+        </label>
+
+        <button type="submit" id="form-submit-button">Submit</button>
+      </form>
+    </div>
+  </main>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+
 </html>
