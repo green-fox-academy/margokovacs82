@@ -33,13 +33,14 @@ app.get('/posts', (req, res) => {
 
 //make a new record
 app.post('/posts', function(req, res) {
+
   timestamp = moment().format('YYYY-MM-DD HH:mm:ss');
   title = req.body.title;
   url = req.body.url;
+  let sql = "INSERT INTO posts (timestamp, title, url, score, owner) VALUES (?, ?, ?, ?, ?)";
+  let queryInputs = [timestamp, title, url, 0, 'lali'];
  
-  connection.query("INSERT INTO posts (timestamp, title, url, score, owner) VALUES (?, ?, ?, ?, ?)", 
-  [timestamp, title, url, 0, 'lali'],
-  function(err, result){
+  connection.query(sql, queryInputs, function(err, result){
     if(err) {
       console.log(err);
       res.sendStatus(500);
@@ -51,8 +52,8 @@ app.post('/posts', function(req, res) {
 });
 
 //upvote and downvote
-app.put('/posts/:id/upvote', function(req, res) {
-  
+app.patch('/posts/:id/upvote', function(req, res) {
+
   let upvote = `UPDATE posts SET score = score + 1 WHERE id = ${req.params.id};`;
   connection.query(upvote, (err, result) => {
     if(err) {
@@ -65,7 +66,7 @@ app.put('/posts/:id/upvote', function(req, res) {
   });
 });
 
-app.put('/posts/:id/downvote', function(req, res) {
+app.patch('/posts/:id/downvote', function(req, res) {
   
   let downvote = `UPDATE posts SET score = score - 1 WHERE id = ${req.params.id};`;
   connection.query(downvote, (err, result) => {
@@ -82,14 +83,20 @@ app.put('/posts/:id/downvote', function(req, res) {
 //modify a record - in progress
 app.put('/posts/:id', function(req, res) {
   
-    let modifications = `UPDATE posts SET title = '${req.body.title}', url = '${req.body.url}' WHERE id = ${req.params.id};`; 
-    connection.query(modifications, (err, result) => {
+  let newowner = req.body.owner;
+  let newtitle = req.body.title;
+  let newurl = req.body.url;
+  let sql = "UPDATE posts SET title = ?, url = ?, owner = ? WHERE id = ?;";
+  let queryInputs = [newtitle, newurl, newowner, req.params.id];
+  
+    connection.query(sql, queryInputs, function (err, result) {
       if(err) {
         console.log(err);
         res.sendStatus(500);
       } else {
-        console.log("1 record updated");
-        res.json(result);
+        res.json({
+          message: "1 record updated",
+        });
       }
     });
   });
@@ -109,6 +116,3 @@ app.delete('/posts/:id', function(req, res) {
     }
   });
 });
-
-
-
