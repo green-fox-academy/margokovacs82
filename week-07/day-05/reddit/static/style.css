@@ -10,7 +10,14 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
-  background: #EEE;
+  background: rgba(242,246,248,1);
+  background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(242,246,248,1) 7%, rgba(235,242,247,1) 10%, rgba(212,231,242,1) 20%, rgba(181,215,235,1) 33%, rgba(224,239,249,1) 53%, rgba(224,239,249,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(7%, rgba(242,246,248,1)), color-stop(10%, rgba(235,242,247,1)), color-stop(20%, rgba(212,231,242,1)), color-stop(33%, rgba(181,215,235,1)), color-stop(53%, rgba(224,239,249,1)), color-stop(100%, rgba(224,239,249,1)));
+  background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(242,246,248,1) 7%, rgba(235,242,247,1) 10%, rgba(212,231,242,1) 20%, rgba(181,215,235,1) 33%, rgba(224,239,249,1) 53%, rgba(224,239,249,1) 100%);
+  background: -o-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(242,246,248,1) 7%, rgba(235,242,247,1) 10%, rgba(212,231,242,1) 20%, rgba(181,215,235,1) 33%, rgba(224,239,249,1) 53%, rgba(224,239,249,1) 100%);
+  background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(242,246,248,1) 7%, rgba(235,242,247,1) 10%, rgba(212,231,242,1) 20%, rgba(181,215,235,1) 33%, rgba(224,239,249,1) 53%, rgba(224,239,249,1) 100%);
+  background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(242,246,248,1) 7%, rgba(235,242,247,1) 10%, rgba(212,231,242,1) 20%, rgba(181,215,235,1) 33%, rgba(224,239,249,1) 53%, rgba(224,239,249,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );
 }
 
 header {
@@ -21,32 +28,124 @@ header {
   position: relative;
   top: 0;
   left: 0;
-  text-align: center;
-  justify-content: center;
 }
 
-img {
-  float: left;
+#header-img {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 160px;
+  left: 20px;
 }
 
 h1 {
   float: left;
   color: white;
   font-style: italic;
-  margin: 2 rem;
+  margin: 2rem;
   font-size: 2rem;
   padding: 1rem;
 }
 
-
-#dashboard {
-
+a {
+  margin: 1rem;
+  color: rgb(77, 73, 67);
+  padding: 1rem;
+  text-decoration: none;
 }
 
-#input-form {
+a:hover {
+  color: rgb(138, 69, 138);
+}
 
+main {
+  width: 65%;
+  height: 100%;
+  float: left;
+  background: rgba(242,246,248,1);
+  background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,215,235,1) 48%, rgba(216,225,231,1) 90%, rgba(224,239,249,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(48%, rgba(181,215,235,1)), color-stop(90%, rgba(216,225,231,1)), color-stop(100%, rgba(224,239,249,1)));
+  background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,215,235,1) 48%, rgba(216,225,231,1) 90%, rgba(224,239,249,1) 100%);
+  background: -o-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,215,235,1) 48%, rgba(216,225,231,1) 90%, rgba(224,239,249,1) 100%);
+  background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,215,235,1) 48%, rgba(216,225,231,1) 90%, rgba(224,239,249,1) 100%);
+  background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(181,215,235,1) 48%, rgba(216,225,231,1) 90%, rgba(224,239,249,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );
+}
+
+#dashboard {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between; 
+}
+
+.dash-item {
+  border-bottom: solid rgb(192, 170, 170) 2px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  justify-content: space-between; 
+  height: 130px;
+}
+
+.item-title {
+display:flex;
+justify-content: center;
+align-items: center;
+}
+
+.box1 {
+  width: 100px;
+  height: 150px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.item-owner {
+  color: rgb(59, 100, 126);
+  font-weight: bold;
+  font-size: .75rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-date {
+  font-size: .5rem;
+  margin-top: 100px;
 }
 
 button {
+  border-radius: 5px;
+  color: rgb(77, 73, 67);
+  margin-top: 50px;
+  margin-right: 20px;
+  background-color: #fff;
+  font-size: .5rem;
+}
 
+.input-form {
+  width: 30%;
+  position: fixed;
+  right: 0px;
+  top: 320px;
+  padding-top: 20;
+  margin: 20px;
+}
+
+#form-submit-button{
+  font-size: 1rem;
+  border-radius: 5px;
+  color: rgb(77, 73, 67);
+  margin: 20px;
+  margin-left: 10px;
+  min-width: 100px;
+  background-color: #fff;
+}
+
+label {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center; 
 }

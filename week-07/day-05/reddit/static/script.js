@@ -41,12 +41,63 @@ submitButton.addEventListener('click', (e) => {
     }
   };
 
-  reddit.send(JSON.stringify({
-    title: formData.elements.title.value,
-    url: formData.elements.url.value,
-    owner: formData.elements.owner.value,
-  }));
+    reddit.send(JSON.stringify({
+      title: formData.elements.title.value,
+      url: formData.elements.url.value,
+      owner: formData.elements.owner.value,
+    }));
 });
+
+//like
+
+const like = document.querySelectorAll('.upvote-img');
+
+like.forEach(e => {
+  e.addEventListener('click', getLikes);
+});
+
+function getLikes(e) {
+  const reddit = new XMLHttpRequest();
+  let id = e.target.id;
+  
+  reddit.open('PATCH', `/posts/${id}/upvote`);
+  reddit.setRequestHeader('Content-Type', 'application/json');
+
+  reddit.onreadystatechange = () => {
+    if (reddit.readyState === XMLHttpRequest.DONE) {
+    };
+  };
+  reddit.send(JSON.stringify({
+    id: id,
+  }));
+  e.target.parentNode.parentNode.querySelector('.item-score').textContent =  parseInt(e.target.parentNode.parentNode.querySelector('.item-score').textContent) + 1;
+}
+
+
+//unlike
+
+let unlike = document.querySelectorAll('.downvote-img');
+
+unlike.forEach(e => {
+  e.addEventListener('click', getUnLikes);
+});
+
+function getUnLikes(e) {
+  const reddit = new XMLHttpRequest();
+  let id = e.target.id;
+  
+  reddit.open('PATCH', `/posts/${id}/downvote`);
+  reddit.setRequestHeader('Content-Type', 'application/json');
+
+  reddit.onreadystatechange = () => {
+    if (reddit.readyState === XMLHttpRequest.DONE) {
+    };
+  };
+  reddit.send(JSON.stringify({
+    id: id,
+  }));
+  e.target.parentNode.parentNode.querySelector('.item-score').textContent =  parseInt(e.target.parentNode.parentNode.querySelector('.item-score').textContent) - 1;
+}
 
 
 //delete

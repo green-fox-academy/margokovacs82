@@ -67,7 +67,7 @@ app.post('/posts', function(req, res) {
 //upvote and downvote
 app.patch('/posts/:id/upvote', function(req, res) {
 
-  let upvote = `UPDATE posts SET score = score + 1 WHERE id = ${req.params.id};`;
+  let upvote = `UPDATE posts SET score = score + 1 WHERE id = ${req.body.id};`;
   connection.query(upvote, (err, result) => {
     if(err) {
       console.log(err);

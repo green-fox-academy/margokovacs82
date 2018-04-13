@@ -14,32 +14,42 @@
   <header>
 
     <div>
-      <h1>Welcome to Reddit</h1>
+      <h1>Welcome to Philosoph/it</h1>
     </div>
     </br>
-    <h1>All about space... or, life</h1>
+    <h1>All about space... or life</h1>
     <img id="header-img" src="//b.thumbs.redditmedia.com/CltPFEKKCn6cw7Qc0_uoQl7HY6jGdpCGQSL6PgadzyY.png" width="100" height="100"
       alt="space">
 
   </header>
   <main class="main">
 
+
     <div id="dashboard">
       <% posts.forEach(item => { %>
         <div class="dash-item">
-
+          <div class="box1">
+            <div>
+              <img class="upvote-img" src="/static/upvote.png" id="<%=item.id%>">
+            </div>
+            <p class="item-score">
+              <%= item.score %>
+            </p>
+            <div>
+              <img class="downvote-img" src="/static/downvote.png" id="<%=item.id%>">
+            </div>
+            </div>
           <div class="item-title">
             <h2>
-              <a href="<%= item.url %>"target="_blank">
+              <a href="<%= item.url %>" target="_blank">
                 <%= item.title %>
               </a>
             </h2>
           </div>
-          <div class="item-score">
-            <%= item.score %>
-          </div>
+         
           <div class="item-owner">
             <%= item.owner %>
+           
           </div>
           <div class="item-date">
             <%= moment(item.date).format('YYYY-MM-DD') %>
@@ -50,6 +60,7 @@
         </div>
         <% }) %>
     </div>
+
 
 
     <div class="input-form">
