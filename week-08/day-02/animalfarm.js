@@ -24,7 +24,6 @@ class Farm {
   constructor(slots) {
     this.slots = slots;
     this.animals = [];
-    
   }
 
   breed() {
@@ -41,18 +40,27 @@ class Farm {
      return this.animals;
   }
 
-  info () {
-    console.log(`The farm has ${this.animals.length} living animals we are bankrupt`)
-  }
-
   progress() {
-   // All animals should have their methods called randomly with 50% chance
-//The farm should call its breed and slaughter method at the end of each day
-//The farm should print report at the end of each day
-//Print the number of sheeps
-//Print "bankrupt" if no animals left
-//Print "okay" if the number of animals is above zero and under the slot number
-//Print "full" if the number of animals are at the maximum allowed
+    let counter = 0;
+    if(counter % 2 === 1) {
+      this.animals.eat();
+      this.animals.drink();
+      this.animals.Play();
+    }
+    this.breed();
+    this.slaughter();
+
+    console.log(`We have ${this.animals.length} sheeps`);
+
+    if(this.animals.length >= this.slots) {
+      console.log('Full');
+    }
+    if(this.animals.length === 0) {
+      console.log('We are bankrupt');
+    } 
+    if(this.animals.length > 0 && this.animals.length < this.slots) {
+      console.log('Okay');
+    }
   }
 }
 
@@ -64,14 +72,14 @@ SheepFarm.breed();
 SheepFarm.breed();
 SheepFarm.breed();
 SheepFarm.breed();
+console.log(SheepFarm.animals.length);
 SheepFarm.slaughter();
 console.log(SheepFarm.animals.length);
 console.log('---------------------');
-//console.log(SheepFarm.animals);
+console.log(SheepFarm.animals);
 SheepFarm.progress();
+console.log(SheepFarm.animals.length);
 //const button = document.querySelector('button');
-
 // Add a click event to the button and call 'progress'
-
 // The progress function should log the following to the console:
 //  -  The farm has 20 living animals, we are full
