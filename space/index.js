@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
       }
       res.render('spaceship', {
         planet: results,
-        spaceship: moreresults     
+        spaceship: moreresults[0]     
       });
     });
   });
@@ -75,9 +75,7 @@ app.post('/movehere/:id', function(req, res) {
         res.sendStatus(500);
         return;
       }
-      res.json({
-        message: 'hurray!',
-      });
+      res.json(result);
     });
   });
 });
