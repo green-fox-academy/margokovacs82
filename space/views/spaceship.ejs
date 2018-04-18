@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <header>
+
+        <div>
+          <h1>Space transporter</h1>
+        </div>
+      </header>
+      <container>
+          <table>
+            <thead>
+              <tr>
+                <th>Planet</th>
+                <th>Population</th>
+                <th>Scpaceship location</th>
+                <th>People on ship</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% planet.forEach(item => { %>
+              
+                <td><div class="name"> <%= item.name %> </div></td> 
+              
+                <td><div class="population"> <%= item.population %></div></td>
+        
+                <td>
+                  <button class="movehere" data-id="<%= item.id %>">Move here</button>
+                  <button class="toplanet">To planet</button>
+                  <button class="toship">To ship</button>
+                </td>
+
+                <td><div class="onship">
+                  <% spaceship.forEach(item => { %>
+                    <%= item.utilization %>
+                    <% }) %>
+                  </div></td>
+
+            
+            </tbody>
+            <% }) %>
+          </table>
+          </container>
+    <script src="/static/script.js"></script>
+</body>
+</html>
