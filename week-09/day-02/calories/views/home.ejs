@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    Calories
+  </title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>My calorie list</h1>
+  </header>
+  <main class="main">
+    <div id="dashboard">
+      <% food.forEach(item => { %>
+        <div class="dash-item">
+
+          <div class="item-title">
+            <h2>
+              <%= item.food_name %>
+            </h2>
+          </div>
+
+          <div class="item-amount">
+            <%= item.food_amount %>
+          </div>
+
+          <div class="calories">
+            <%= item.calorie %>
+          </div>
+
+          <div>
+            <button type="delete" id="delete-button" data-id="<%= item.idfood %>">Delete post</button>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+
+    <div class="input-form">
+      <form>
+        <label for="title">
+          <span>Food:</span>
+          <input id="title" name="title" class="form-input">
+        </label>
+        <label for="amount">
+          <span>Amount:</span>
+          <input id="amount" name="amount" class="form-input">
+        </label>
+        <label for="calorie">
+          <span>Calories:</span>
+          <input id="calorie" name="calorie" class="form-input">
+        </label>
+        <button type="submit" id="form-submit-button">Submit</button>
+      </form>
+    </div>
+  </main>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+
+</html>
