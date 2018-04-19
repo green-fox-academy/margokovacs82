@@ -75,30 +75,42 @@ app.get('/questions', (req, res) => {
 });
 
 //make a new record
-app.post('/questions', function(req, res) {
 
-  question = req.body.title;
-  let sql = "INSERT INTO questions (question) VALUES (?)";
- 
-  conn.query(sql, queryInputs, function(err, result){
-    conn.query(`INSERT INTO answers ${req.body.answer} WHERE question_id = ${result[0].id}`, function(err, result){
-     
-    if(err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      res.json({
-        message: 'hurray!',
-      });
-    }
-  });
+app.post('/question', function (req, res) {
+  const { question, answer_1, is_correct1, answer_2, is_correct2, answer_3, is_correct3, answer_4, is_correct4 } = req.body;
+
+  if (parseInt(is_correct1) + parseInt(is_correct2) + parseInt(is_correct3) + parseInt(is_correct4) !== 1) {
+    res.json({
+      error: 'Please provide one correct answer!'
+    })
+    return;
+  } else {
+    conn.query(`INSERT INTO questions (question) VALUES ("${question}");`, function (err, question) {
+      if (err) {
+        res.sendStatus(500);
+        return;
+      }
+      let questionID = question.id;
+      conn.query(`INSERT INTO answers (question_id, answer, is_correct) VALUES
+      (${questionID}, "${answer_1}", ${is_correct1}),
+      (${questionID}, "${answer_2}", ${is_correct2}),
+      (${questionID}, "${answer_3}", ${is_correct3}),
+      (${questionID}, "${answer_4}", ${is_correct4});`, function (err, answer) {
+          if (err) {
+            res.sendStatus(500);
+            return;
+          }
+        });
+    });
+  }
+  res.sendStatus(200);
 });
-});
+
 
 //delete a record
 app.delete('/questions/:id', function(req, res) {
 
-  let deleteQuery = `DELETE FROM questions, answers WHERE id = ${req.params.id};`;
+  let deleteQuery = `DELETE FROM questions, answers WHERE id, question_id = ${req.params.id};`;
   connection.query(deleteQuery, (err, result) => {
     if(err) {
       console.log(err);

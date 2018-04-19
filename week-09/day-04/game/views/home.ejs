@@ -20,7 +20,7 @@
   <container>
     <h3><%= question.question %></h3>
     <% answers.forEach(item => { %>
-      <button class="one" data-id="<%= item.id %>">
+      <button class="one" id="<%= item.id %>" name="<%= item.is_correct %>">
         <%= item.answer %>
       </button>
           <% }) %>
