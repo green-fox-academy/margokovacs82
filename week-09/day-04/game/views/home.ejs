@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quiz</title>
+</head>
+
+<body>
+  <header>
+
+    <div>
+      <h1>Select your answer!</h1>
+    </div>
+  </header>
+  <h2>Score: </h2>
+  <container>
+    <h3><%= question.question %></h3>
+    <% answers.forEach(item => { %>
+      <button class="one" data-id="<%= item.id %>">
+        <%= item.answer %>
+      </button>
+          <% }) %>
+  </container>
+  <div>
+    <h3> <a href="/questions"> Click here to see the questions!</a> </h3>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+
+</html>

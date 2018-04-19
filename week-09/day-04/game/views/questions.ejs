@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Questions, submit and delete</title>
+</head>
+
+<body>
+  <h1>Manage questions</h1>
+  <container>
+    <% questions.forEach(item => { %>
+      <div>
+        <%= item.question %>
+      </div>
+      <button class="delete" delete-id="<%= item.id %>">DELETE
+      </button>
+      <% }) %>
+
+        <div>
+          <h2>Create a new question!</h2>
+        </div>
+        <div class="input-form">
+          <form>
+            <label for="title">
+              <span>Type your question here!</span>
+              <input id="title" name="title" class="form-input">
+            </label>
+            <div>Type your answers here:</div>
+
+            <label for="ans1">
+              <span>#1</span>
+              <input id="ans1" name="ans1" class="form-input">
+            </label>
+
+            <label for="ans2">
+              <span>#2</span>
+              <input id="ans2" name="ans2" class="form-input">
+            </label>
+
+            <label for="ans3">
+              <span>#3</span>
+              <input id="ans3" name="ans3" class="form-input">
+            </label>
+
+            <label for="ans4">
+              <span>#4</span>
+              <input id="ans4" name="ans4" class="form-input">
+            </label>
+
+            <button type="submit" id="form-submit-button">Submit</button>
+          </form>
+
+          <h3>
+            <a href="/game"> Click here to navigate back!</a>
+          </h3>
+        </div>
+
+        <script src="/static/script.js"></script>
+</body>
+
+</html>
